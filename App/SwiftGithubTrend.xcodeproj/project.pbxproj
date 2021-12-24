@@ -74,12 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				14F19A07277653C30002F2EF /* Resources */,
-				14C9C74927754F7C0022CABB /* AppDelegate.swift */,
-				14C9C74B27754F7C0022CABB /* SceneDelegate.swift */,
-				14C9C74D27754F7C0022CABB /* ViewController.swift */,
-				14F19A1B277659100002F2EF /* Main.storyboard */,
-				14F19A18277658F20002F2EF /* LaunchScreen.storyboard */,
-				14C9C75727754F7D0022CABB /* Info.plist */,
+				14F19A2627765DF40002F2EF /* Sources */,
 			);
 			path = SwiftGithubTrend;
 			sourceTree = "<group>";
@@ -91,6 +86,8 @@
 				14F19A102776555C0002F2EF /* Strings.strings */,
 				14F19A08277653ED0002F2EF /* Generated */,
 				14C9C75227754F7D0022CABB /* Assets.xcassets */,
+				14F19A18277658F20002F2EF /* LaunchScreen.storyboard */,
+				14C9C75727754F7D0022CABB /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -103,6 +100,17 @@
 				14F19A0E2776548C0002F2EF /* Assets.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		14F19A2627765DF40002F2EF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				14C9C74927754F7C0022CABB /* AppDelegate.swift */,
+				14C9C74B27754F7C0022CABB /* SceneDelegate.swift */,
+				14C9C74D27754F7C0022CABB /* ViewController.swift */,
+				14F19A1B277659100002F2EF /* Main.storyboard */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		D58352DB9F84FE5DDDFB9C55 /* Frameworks */ = {
@@ -424,7 +432,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4957F54262;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SwiftGithubTrend/Info.plist;
+				INFOPLIST_FILE = SwiftGithubTrend/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -453,7 +461,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4957F54262;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SwiftGithubTrend/Info.plist;
+				INFOPLIST_FILE = SwiftGithubTrend/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
