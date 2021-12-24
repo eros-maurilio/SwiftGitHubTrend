@@ -16,7 +16,6 @@
 		14F19A0F2776548C0002F2EF /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F19A0E2776548C0002F2EF /* Assets.swift */; };
 		14F19A112776555C0002F2EF /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14F19A102776555C0002F2EF /* Strings.strings */; };
 		14F19A1A277658F20002F2EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F19A18277658F20002F2EF /* LaunchScreen.storyboard */; };
-		14F19A1D277659100002F2EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F19A1B277659100002F2EF /* Main.storyboard */; };
 		14F19A2527765AE80002F2EF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14F19A2327765AE80002F2EF /* Localizable.strings */; };
 		982AD2B53402842481F6438D /* Pods_SwiftGithubTrend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D0C4B25EDE80395DF3F2B2 /* Pods_SwiftGithubTrend.framework */; };
 /* End PBXBuildFile section */
@@ -33,7 +32,6 @@
 		14F19A0E2776548C0002F2EF /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		14F19A102776555C0002F2EF /* Strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
 		14F19A19277658F20002F2EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftGithubTrend/Resources/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		14F19A1C277659100002F2EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SwiftGithubTrend/Resources/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14F19A2427765AE80002F2EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		53A9F902612CBB9F63F6F280 /* Pods-SwiftGithubTrend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftGithubTrend.debug.xcconfig"; path = "Target Support Files/Pods-SwiftGithubTrend/Pods-SwiftGithubTrend.debug.xcconfig"; sourceTree = "<group>"; };
 		A6D0C4B25EDE80395DF3F2B2 /* Pods_SwiftGithubTrend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftGithubTrend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +106,6 @@
 				14C9C74927754F7C0022CABB /* AppDelegate.swift */,
 				14C9C74B27754F7C0022CABB /* SceneDelegate.swift */,
 				14C9C74D27754F7C0022CABB /* ViewController.swift */,
-				14F19A1B277659100002F2EF /* Main.storyboard */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -192,7 +189,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F19A2527765AE80002F2EF /* Localizable.strings in Resources */,
-				14F19A1D277659100002F2EF /* Main.storyboard in Resources */,
 				14F19A1A277658F20002F2EF /* LaunchScreen.storyboard in Resources */,
 				14F19A112776555C0002F2EF /* Strings.strings in Resources */,
 				14C9C75327754F7D0022CABB /* Assets.xcassets in Resources */,
@@ -285,14 +281,6 @@
 				14F19A19277658F20002F2EF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		14F19A1B277659100002F2EF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14F19A1C277659100002F2EF /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		14F19A2327765AE80002F2EF /* Localizable.strings */ = {
@@ -435,7 +423,6 @@
 				INFOPLIST_FILE = SwiftGithubTrend/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -464,7 +451,6 @@
 				INFOPLIST_FILE = SwiftGithubTrend/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
