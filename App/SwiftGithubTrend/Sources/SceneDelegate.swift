@@ -6,13 +6,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+
         let window = UIWindow(windowScene: windowScene)
-        
+
         let viewController = ViewController() // TODO: When we got the final view, change this guy
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
-        
+
         self.window = window
         window.makeKeyAndVisible()
     }
@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidDisconnect(_ scene: UIScene) {}
 
     func sceneDidBecomeActive(_ scene: UIScene) {}
-    
+
     func sceneWillResignActive(_ scene: UIScene) {}
 
     func sceneWillEnterForeground(_ scene: UIScene) {}
