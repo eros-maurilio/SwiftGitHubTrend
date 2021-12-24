@@ -6,5 +6,6 @@ target 'SwiftGithubTrend' do
   use_frameworks!
 
   # Pods for SwiftGithubTrend
-
+   pod 'SwiftGen'
+   pod 'SwiftLint'
 end
