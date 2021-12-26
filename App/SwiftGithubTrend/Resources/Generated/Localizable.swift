@@ -11,6 +11,27 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Localizable {
 
+  internal enum Github {
+    /// api.github.com
+    internal static let host = Localizable.tr("Localizable", "Github.host")
+    /// /search/repositories
+    internal static let path = Localizable.tr("Localizable", "Github.path")
+  }
+
+  internal enum Web {
+    /// https
+    internal static let https = Localizable.tr("Localizable", "Web.https")
+  }
+
+  internal enum Query {
+    internal enum Item {
+      /// q
+      internal static let letter = Localizable.tr("Localizable", "query.item.letter")
+      /// sorting
+      internal static let sorting = Localizable.tr("Localizable", "query.item.sorting")
+    }
+  }
+
   internal enum Test {
     /// A random test
     internal static let text = Localizable.tr("Localizable", "test.text")

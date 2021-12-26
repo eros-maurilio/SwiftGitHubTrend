@@ -1,1 +1,9 @@
 "test.text" = "A random test";
+
+"Web.https" = "https";
+
+"Github.host" = "api.github.com";
+"Github.path" = "/search/repositories";
+
+"query.item.letter" = "q";
+"query.item.sorting" = "sorting";
