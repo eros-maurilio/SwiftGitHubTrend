@@ -10,6 +10,7 @@
 		14008EE32777E57400522715 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14008EE22777E57400522715 /* EndPoint.swift */; };
 		14008EE52777E7C900522715 /* APIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14008EE42777E7C900522715 /* APIParameters.swift */; };
 		14008EE72777F5C200522715 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14008EE62777F5C200522715 /* DataLoader.swift */; };
+		14008EEA2778015700522715 /* RepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14008EE92778015700522715 /* RepositoriesModel.swift */; };
 		14C9C74A27754F7C0022CABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74927754F7C0022CABB /* AppDelegate.swift */; };
 		14C9C74C27754F7C0022CABB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74B27754F7C0022CABB /* SceneDelegate.swift */; };
 		14C9C74E27754F7C0022CABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74D27754F7C0022CABB /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		14008EE22777E57400522715 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		14008EE42777E7C900522715 /* APIParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParameters.swift; sourceTree = "<group>"; };
 		14008EE62777F5C200522715 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		14008EE92778015700522715 /* RepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesModel.swift; sourceTree = "<group>"; };
 		14C9C74627754F7C0022CABB /* SwiftGithubTrend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGithubTrend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C9C74927754F7C0022CABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C9C74B27754F7C0022CABB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14008EE82778014100522715 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14008EE92778015700522715 /* RepositoriesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		14C9C73D27754F7B0022CABB = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +112,7 @@
 		14EEC80A27769640000006FF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				14008EE82778014100522715 /* Model */,
 				14008EE22777E57400522715 /* EndPoint.swift */,
 				14008EE42777E7C900522715 /* APIParameters.swift */,
 				14008EE62777F5C200522715 /* DataLoader.swift */,
@@ -303,6 +314,7 @@
 				14008EE52777E7C900522715 /* APIParameters.swift in Sources */,
 				14F19A0A277654030002F2EF /* Strings.swift in Sources */,
 				14008EE32777E57400522715 /* EndPoint.swift in Sources */,
+				14008EEA2778015700522715 /* RepositoriesModel.swift in Sources */,
 				14C9C74C27754F7C0022CABB /* SceneDelegate.swift in Sources */,
 				14008EE72777F5C200522715 /* DataLoader.swift in Sources */,
 			);
