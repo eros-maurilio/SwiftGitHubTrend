@@ -1,7 +1,7 @@
 struct Watch: Codable {
     let title: String
-//    let head: Head
-//    let body: String
+    let head: Head
+    let body: String
 }
 
 struct Head: Codable {
@@ -11,12 +11,12 @@ struct Head: Codable {
 
 struct Repo: Codable {
     let owner: Owner
-    let createAt: String
+    let createdAt: String
 }
 
 extension Repo {
     enum CodingKeys: String, CodingKey {
-        case createAt = "create_at"
+        case createdAt = "created_at"
         case owner
     }
 }
