@@ -5,6 +5,9 @@
 "Github.host" = "api.github.com";
 "Github.path.search" = "/search/repositories";
 "Github.path.repos" = "/repos";
+"Github.parameters.language.swift" = "language:Swift";
+"Github.parameters.sorting.stars" = "stars";
+
 
 "query.item.letter" = "q";
 "query.item.sorting" = "sorting";

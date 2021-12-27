@@ -1,10 +1,10 @@
 enum APIParameters {
     
     enum Language {
-        static let swift = "language:Swift"
+        static let swift = Localizable.Github.Parameters.Language.swift
     }
     
     enum Sorting {
-        static let stars = "stars"
+        static let stars = Localizable.Github.Parameters.Sorting.stars
     }
 }

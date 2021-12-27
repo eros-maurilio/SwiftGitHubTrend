@@ -14,6 +14,16 @@ internal enum Localizable {
   internal enum Github {
     /// api.github.com
     internal static let host = Localizable.tr("Localizable", "Github.host")
+    internal enum Parameters {
+      internal enum Language {
+        /// language:Swift
+        internal static let swift = Localizable.tr("Localizable", "Github.parameters.language.swift")
+      }
+      internal enum Sorting {
+        /// stars
+        internal static let stars = Localizable.tr("Localizable", "Github.parameters.sorting.stars")
+      }
+    }
     internal enum Path {
       /// /repos
       internal static let repos = Localizable.tr("Localizable", "Github.path.repos")
