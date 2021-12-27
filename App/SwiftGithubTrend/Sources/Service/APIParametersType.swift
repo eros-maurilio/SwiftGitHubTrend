@@ -1,4 +1,4 @@
-enum APIParameters {
+enum APIParametersType {
     
     enum Language {
         static let swift = Localizable.Github.Parameters.Language.swift

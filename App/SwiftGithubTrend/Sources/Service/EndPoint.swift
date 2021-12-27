@@ -1,16 +1,15 @@
 import Foundation
 
 struct EndPoint {
+    
+    // MARK: - Atributes
+    
     let path: String
     let queryItems: [URLQueryItem]?
     let repo: String?
     
-    init(path: String, queryItems: [URLQueryItem]? = nil, repo: String? = nil) {
-        self.path = path
-        self.queryItems = queryItems
-        self.repo = repo
-    }
-
+    // MARK: - Computed Variable URL
+    
     var url: URL? {
 
         var components = URLComponents()
@@ -26,26 +25,40 @@ struct EndPoint {
 
         return components.url
     }
+
+    // MARK: - Dependencies
+    
+    init(path: String, queryItems: [URLQueryItem]? = nil, repo: String? = nil) {
+        self.path = path
+        self.queryItems = queryItems
+        self.repo = repo
+    }
 }
 
 extension EndPoint {
+    
+    // MARK: - Main Static Methods
+    
     static func findRepositories(using query: String, sortedBy sorting: String) -> EndPoint {
-        return EndPoint(path: Localizable.Github.Path.search,
-                        queryItems: [
-                            URLQueryItem(name: Localizable.Query.Item.letter, value: query),
-                            URLQueryItem(name: Localizable.Query.Item.sorting, value: sorting)
-                        ]
-        )
+        let queryItems = [
+            URLQueryItem(name: Localizable.Query.Item.letter, value: query),
+            URLQueryItem(name: Localizable.Query.Item.sorting, value: sorting)
+        ]
+        
+        return EndPoint(path: Localizable.Github.Path.search, queryItems: queryItems)
+        
     }
     
     static func watch(repo repoName: String, from author: String, listedBy: String) -> EndPoint {
-        let repoPath = repoPath([repoName, author, listedBy])
+        let repoPath = repoPathFactory(using: [repoName, author, listedBy])
         
         return EndPoint(path: repoPath)
         
     }
     
-    private static func repoPath(_ parameters: [String]) -> String {
+    // MARK: - Helper Method
+    
+    private static func repoPathFactory(using parameters: [String]) -> String {
         var path = Localizable.Github.Path.repos
         
         for parameter in parameters {

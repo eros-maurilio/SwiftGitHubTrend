@@ -1,11 +1,11 @@
 import UIKit
 
-typealias RepoSearch = Result<Search, NSError>
-typealias RepoWatch = Result<[Watch], NSError>
+typealias RepoSearchResult = Result<SearchResponse, NSError>
+typealias RepoWatchResult = Result<[WatchResponse], NSError>
 
 class ViewController: UIViewController {
-    private var search = Search(items: [])
-    private var repo: [Watch]?
+    private var search = SearchResponse(items: [])
+    private var repo: [WatchResponse]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,8 +14,8 @@ class ViewController: UIViewController {
         
         let dataLoader = DataLoader()
         
-        dataLoader.request(.findRepositories(using: APIParameters.Language.swift,
-                                             sortedBy: APIParameters.Sorting.stars)) { [weak self] (result: RepoSearch) in
+        dataLoader.request(.findRepositories(using: APIParametersType.Language.swift,
+                                             sortedBy: APIParametersType.Sorting.stars)) { [weak self] (result: RepoSearchResult) in
             
             guard let self = self else { return }
             
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             }
         }
                 
-        dataLoader.request(.watch(repo: "vsouza", from: "awesome-ios", listedBy: "pulls")) { [weak self] (result: RepoWatch) in
+        dataLoader.request(.watch(repo: "vsouza", from: "awesome-ios", listedBy: "pulls")) { [weak self] (result: RepoWatchResult) in
             guard let self = self else { return }
             
             switch result {

@@ -1,9 +1,15 @@
 import Foundation
 
 final class DataLoader {
+    
+    // MARK: - Private atribute
+    
     private var sharedSession: URLSession { URLSession.shared }
     
+    // MARK: - API Resquest Method
+    
     func request<T: Decodable>(_ endPoint: EndPoint, completion: @escaping (Result<T, NSError>) -> Void) {
+        
         guard let url = endPoint.url else {
             return completion(.failure(NSError(domain: "", code: 000, userInfo: ["Message": "Invalid URL"])))
         }
@@ -40,6 +46,7 @@ final class DataLoader {
             } catch let error as NSError {
                 NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
             }
+            
         }
         task.resume()
     }

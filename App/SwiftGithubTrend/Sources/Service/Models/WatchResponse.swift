@@ -1,4 +1,4 @@
-struct Watch: Codable {
+struct WatchResponse: Codable {
     let title: String
     let head: Head
     let body: String

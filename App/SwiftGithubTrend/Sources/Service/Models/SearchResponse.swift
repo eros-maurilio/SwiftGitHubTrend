@@ -1,4 +1,4 @@
-struct Search: Codable {
+struct SearchResponse: Codable {
     let items: [Item]
 }
 
