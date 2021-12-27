@@ -14,8 +14,12 @@ internal enum Localizable {
   internal enum Github {
     /// api.github.com
     internal static let host = Localizable.tr("Localizable", "Github.host")
-    /// /search/repositories
-    internal static let path = Localizable.tr("Localizable", "Github.path")
+    internal enum Path {
+      /// /repos
+      internal static let repos = Localizable.tr("Localizable", "Github.path.repos")
+      /// /search/repositories
+      internal static let search = Localizable.tr("Localizable", "Github.path.search")
+    }
   }
 
   internal enum Web {
