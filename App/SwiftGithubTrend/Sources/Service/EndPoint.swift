@@ -38,7 +38,6 @@ extension EndPoint {
         )
     }
     
-    
     static func watch(repo repoName: String, from author: String, listedBy: String) -> EndPoint {
         let repoPath = repoPath([repoName, author, listedBy])
         
@@ -47,7 +46,7 @@ extension EndPoint {
     }
     
     private static func repoPath(_ parameters: [String]) -> String {
-        var path = String()
+        var path = Localizable.Github.Path.repos
         
         for parameter in parameters {
             path += parameter.insertSlash(in: parameter)

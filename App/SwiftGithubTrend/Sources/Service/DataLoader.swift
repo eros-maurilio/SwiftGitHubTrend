@@ -8,6 +8,8 @@ final class DataLoader {
             return completion(.failure(NSError(domain: "", code: 000, userInfo: ["Message": "Invalid URL"])))
         }
         
+        debugPrint(url)
+        
         let task = sharedSession.dataTask(with: url) { data, _, error in
             if let error = error {
                 completion(.failure(NSError(domain: "", code: 000, userInfo: ["Message": error.localizedDescription])))

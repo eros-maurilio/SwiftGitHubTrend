@@ -1,7 +1,7 @@
-struct RepoWatch: Codable {
+struct Watch: Codable {
     let title: String
-    let head: Head
-    let body: String
+//    let head: Head
+//    let body: String
 }
 
 struct Head: Codable {
