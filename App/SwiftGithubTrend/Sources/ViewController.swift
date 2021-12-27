@@ -1,6 +1,7 @@
 import UIKit
 
 typealias RepoSearch = Result<Search, NSError>
+//typealias RepoWatch = Result<>
 
 class ViewController: UIViewController {
     private var search = Search(items: [])
@@ -29,6 +30,10 @@ class ViewController: UIViewController {
                 debugPrint(error)
             }
         }
+        
+//        dataLoader.request(.watch(repo: "vsouza", from: "awesome-ios", listedBy: "pulls")) { [weak self] () in
+//            <#code#>
+//        }
         
         
     }
