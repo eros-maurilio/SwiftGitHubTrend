@@ -3,6 +3,7 @@ excluded:
     - ../App/Pods
 disabled_rules:
     - trailing_comma
+    - trailing_whitespace
     - line_length
 opt_in_rules:
     - yoda_condition
@@ -20,11 +21,9 @@ opt_in_rules:
     - discouraged_object_literal
     - discouraged_optional_boolean
     - file_header
-    - file_name
     - file_types_order
     - force_unwrapping
     - implicitly_unwrapped_optional
-    - indentation_width
     - multiline_arguments
     - multiline_literal_brackets
     - multiline_parameters
