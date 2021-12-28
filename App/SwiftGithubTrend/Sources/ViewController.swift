@@ -1,6 +1,5 @@
 import UIKit
 
-typealias RepoSearchResult = Result<SearchResponse, NSError>
 typealias RepoWatchResult = Result<[WatchResponse], NSError>
 
 class ViewController: UIViewController {

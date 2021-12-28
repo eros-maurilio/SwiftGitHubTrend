@@ -15,6 +15,8 @@
 		146B3AF3277B433C00D0E97B /* RepositoriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146B3AF1277B433C00D0E97B /* RepositoriesView.xib */; };
 		146B3AF7277B441900D0E97B /* RepositoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B3AF5277B441900D0E97B /* RepositoriesCell.swift */; };
 		146B3AF8277B441900D0E97B /* RepositoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146B3AF6277B441900D0E97B /* RepositoriesCell.xib */; };
+		146B3AFB277B51D800D0E97B /* RepositoriesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B3AFA277B51D800D0E97B /* RepositoriesViewModelProtocol.swift */; };
+		146B3AFD277B790B00D0E97B /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B3AFC277B790B00D0E97B /* RepositoriesViewModel.swift */; };
 		14C9C74A27754F7C0022CABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74927754F7C0022CABB /* AppDelegate.swift */; };
 		14C9C74C27754F7C0022CABB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74B27754F7C0022CABB /* SceneDelegate.swift */; };
 		14C9C74E27754F7C0022CABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74D27754F7C0022CABB /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 		146B3AF1277B433C00D0E97B /* RepositoriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesView.xib; sourceTree = "<group>"; };
 		146B3AF5277B441900D0E97B /* RepositoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesCell.swift; sourceTree = "<group>"; };
 		146B3AF6277B441900D0E97B /* RepositoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesCell.xib; sourceTree = "<group>"; };
+		146B3AFA277B51D800D0E97B /* RepositoriesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelProtocol.swift; sourceTree = "<group>"; };
+		146B3AFC277B790B00D0E97B /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
 		14C9C74627754F7C0022CABB /* SwiftGithubTrend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGithubTrend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C9C74927754F7C0022CABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C9C74B27754F7C0022CABB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 		146B3AEF277B428600D0E97B /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				146B3AF9277B4FF700D0E97B /* ViewModel */,
 				146B3AF4277B43D900D0E97B /* Cell */,
 				146B3AF0277B433C00D0E97B /* RepositoriesView.swift */,
 				146B3AF1277B433C00D0E97B /* RepositoriesView.xib */,
@@ -107,6 +112,15 @@
 				146B3AF6277B441900D0E97B /* RepositoriesCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		146B3AF9277B4FF700D0E97B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				146B3AFA277B51D800D0E97B /* RepositoriesViewModelProtocol.swift */,
+				146B3AFC277B790B00D0E97B /* RepositoriesViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		14C9C73D27754F7B0022CABB = {
@@ -374,6 +388,7 @@
 				14C9C74E27754F7C0022CABB /* ViewController.swift in Sources */,
 				146B3AF7277B441900D0E97B /* RepositoriesCell.swift in Sources */,
 				14C9C74A27754F7C0022CABB /* AppDelegate.swift in Sources */,
+				146B3AFD277B790B00D0E97B /* RepositoriesViewModel.swift in Sources */,
 				14F19A0F2776548C0002F2EF /* Assets.swift in Sources */,
 				14F19A0C277654110002F2EF /* Localizable.swift in Sources */,
 				14F5147D277A0B8900DE5476 /* String+Extension.swift in Sources */,
@@ -385,6 +400,7 @@
 				14C9C74C27754F7C0022CABB /* SceneDelegate.swift in Sources */,
 				14008EE72777F5C200522715 /* DataLoader.swift in Sources */,
 				14FB03A42778C14500F1419E /* OwnerModel.swift in Sources */,
+				146B3AFB277B51D800D0E97B /* RepositoriesViewModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

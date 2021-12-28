@@ -1,17 +1,23 @@
 import UIKit
 
+struct CellDTO {
+    let repoName: String
+    let repoDescription: String
+    
+    // Add other repo infos here
+}
+
 class RepositoriesCell: UITableViewCell {
     @IBOutlet private weak var repoName: UILabel!
     @IBOutlet private weak var repoDescription: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+}
 
+extension RepositoriesCell {
+    func fill(dto: CellDTO) {
+        repoName.text = dto.repoName
+        repoDescription.text = dto.repoDescription
+        
+        //Add other repo infos gere
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-    
 }
