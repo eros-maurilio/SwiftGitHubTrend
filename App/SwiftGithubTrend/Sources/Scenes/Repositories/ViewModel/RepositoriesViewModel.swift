@@ -5,14 +5,14 @@ typealias RepoSearchResult = Result<SearchResponse, NSError>
 final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     
     private weak var delegate: LoadContentable?
-    private var repositories: SearchResponse?
+    private var repositories = SearchResponse(items: [])
     
     init(delegate: LoadContentable) {
         self.delegate = delegate
     }
     
     func numberOfRows() -> Int {
-        repositories?.items.count ?? 0
+        repositories.items.count
     }
     
     func numberOfSections() -> Int {
@@ -28,6 +28,7 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
             switch result {
             case let .success(repoData):
                 self.repositories = repoData
+                self.delegate?.didLoad()
                 
             case let .failure(error):
                 debugPrint(error)
@@ -40,11 +41,11 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     }
     
     func dtoForRows(indexPath: IndexPath) -> CellDTO {
-        let item = repositories?.items[indexPath.row]
-        let title = item?.repoName
-        let subtitle = item?.repoDescription
+        let item = repositories.items[indexPath.row]
+        let title = item.repoName
+        let subtitle = item.repoDescription
         
-        return CellDTO(repoName: title ?? "", repoDescription: subtitle ?? "")
+        return CellDTO(repoName: title, repoDescription: subtitle ?? "")
         
     }
     

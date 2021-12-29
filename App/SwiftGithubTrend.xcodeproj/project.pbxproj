@@ -13,10 +13,11 @@
 		14008EEA2778015700522715 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14008EE92778015700522715 /* SearchResponse.swift */; };
 		146B3AF2277B433C00D0E97B /* RepositoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B3AF0277B433C00D0E97B /* RepositoriesView.swift */; };
 		146B3AF3277B433C00D0E97B /* RepositoriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146B3AF1277B433C00D0E97B /* RepositoriesView.xib */; };
-		146B3AF7277B441900D0E97B /* RepositoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B3AF5277B441900D0E97B /* RepositoriesCell.swift */; };
-		146B3AF8277B441900D0E97B /* RepositoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146B3AF6277B441900D0E97B /* RepositoriesCell.xib */; };
+		146B3AF7277B441900D0E97B /* RepositorieViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B3AF5277B441900D0E97B /* RepositorieViewCell.swift */; };
+		146B3AF8277B441900D0E97B /* RepositorieViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146B3AF6277B441900D0E97B /* RepositorieViewCell.xib */; };
 		146B3AFB277B51D800D0E97B /* RepositoriesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B3AFA277B51D800D0E97B /* RepositoriesViewModelProtocol.swift */; };
 		146B3AFD277B790B00D0E97B /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B3AFC277B790B00D0E97B /* RepositoriesViewModel.swift */; };
+		14963C75277CBC9300F340FA /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14963C74277CBC9300F340FA /* UITableView+.swift */; };
 		14C9C74A27754F7C0022CABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74927754F7C0022CABB /* AppDelegate.swift */; };
 		14C9C74C27754F7C0022CABB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74B27754F7C0022CABB /* SceneDelegate.swift */; };
 		14C9C74E27754F7C0022CABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74D27754F7C0022CABB /* ViewController.swift */; };
@@ -40,10 +41,11 @@
 		14008EE92778015700522715 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		146B3AF0277B433C00D0E97B /* RepositoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesView.swift; sourceTree = "<group>"; };
 		146B3AF1277B433C00D0E97B /* RepositoriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesView.xib; sourceTree = "<group>"; };
-		146B3AF5277B441900D0E97B /* RepositoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesCell.swift; sourceTree = "<group>"; };
-		146B3AF6277B441900D0E97B /* RepositoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesCell.xib; sourceTree = "<group>"; };
+		146B3AF5277B441900D0E97B /* RepositorieViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorieViewCell.swift; sourceTree = "<group>"; };
+		146B3AF6277B441900D0E97B /* RepositorieViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositorieViewCell.xib; sourceTree = "<group>"; };
 		146B3AFA277B51D800D0E97B /* RepositoriesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelProtocol.swift; sourceTree = "<group>"; };
 		146B3AFC277B790B00D0E97B /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
+		14963C74277CBC9300F340FA /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		14C9C74627754F7C0022CABB /* SwiftGithubTrend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGithubTrend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C9C74927754F7C0022CABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C9C74B27754F7C0022CABB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,8 +110,8 @@
 		146B3AF4277B43D900D0E97B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				146B3AF5277B441900D0E97B /* RepositoriesCell.swift */,
-				146B3AF6277B441900D0E97B /* RepositoriesCell.xib */,
+				146B3AF5277B441900D0E97B /* RepositorieViewCell.swift */,
+				146B3AF6277B441900D0E97B /* RepositorieViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				14F5147C277A0B8900DE5476 /* String+Extension.swift */,
+				14963C74277CBC9300F340FA /* UITableView+.swift */,
 			);
 			path = Extesions;
 			sourceTree = "<group>";
@@ -310,7 +313,7 @@
 				14F19A2527765AE80002F2EF /* Localizable.strings in Resources */,
 				14F19A1A277658F20002F2EF /* LaunchScreen.storyboard in Resources */,
 				14F19A112776555C0002F2EF /* Strings.strings in Resources */,
-				146B3AF8277B441900D0E97B /* RepositoriesCell.xib in Resources */,
+				146B3AF8277B441900D0E97B /* RepositorieViewCell.xib in Resources */,
 				14C9C75327754F7D0022CABB /* Assets.xcassets in Resources */,
 				146B3AF3277B433C00D0E97B /* RepositoriesView.xib in Resources */,
 			);
@@ -386,7 +389,8 @@
 			files = (
 				146B3AF2277B433C00D0E97B /* RepositoriesView.swift in Sources */,
 				14C9C74E27754F7C0022CABB /* ViewController.swift in Sources */,
-				146B3AF7277B441900D0E97B /* RepositoriesCell.swift in Sources */,
+				146B3AF7277B441900D0E97B /* RepositorieViewCell.swift in Sources */,
+				14963C75277CBC9300F340FA /* UITableView+.swift in Sources */,
 				14C9C74A27754F7C0022CABB /* AppDelegate.swift in Sources */,
 				146B3AFD277B790B00D0E97B /* RepositoriesViewModel.swift in Sources */,
 				14F19A0F2776548C0002F2EF /* Assets.swift in Sources */,

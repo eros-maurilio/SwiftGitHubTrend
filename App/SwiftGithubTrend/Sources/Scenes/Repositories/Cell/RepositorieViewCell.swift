@@ -7,13 +7,13 @@ struct CellDTO {
     // Add other repo infos here
 }
 
-class RepositoriesCell: UITableViewCell {
+class RepositorieViewCell: UITableViewCell {
     @IBOutlet private weak var repoName: UILabel!
     @IBOutlet private weak var repoDescription: UILabel!
     
 }
 
-extension RepositoriesCell {
+extension RepositorieViewCell {
     func fill(dto: CellDTO) {
         repoName.text = dto.repoName
         repoDescription.text = dto.repoDescription
