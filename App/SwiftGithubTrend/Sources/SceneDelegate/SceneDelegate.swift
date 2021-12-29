@@ -9,7 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let window = UIWindow(windowScene: windowScene)
 
-        let viewController = RepositoriesView() // TODO: When we got the final view, change this guy
+        let viewController = RepositoriesView()
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
 
