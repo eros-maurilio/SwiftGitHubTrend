@@ -40,7 +40,12 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     }
     
     func dtoForRows(indexPath: IndexPath) -> CellDTO {
-        return CellDTO(repoName: "", repoDescription: "")
+        let item = repositories?.items[indexPath.row]
+        let title = item?.repoName
+        let subtitle = item?.repoDescription
+        
+        return CellDTO(repoName: title ?? "", repoDescription: subtitle ?? "")
+        
     }
     
     func transporter() {
