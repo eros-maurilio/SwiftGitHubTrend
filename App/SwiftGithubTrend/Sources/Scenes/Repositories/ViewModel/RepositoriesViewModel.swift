@@ -22,6 +22,11 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     }
     
     func loadRepositories() {
+        
+        guard !DataLoader().isLoading else {
+            return
+        }
+        
         DataLoader().request(.findRepositories(using: APIParametersType.Language.swift,
                                                sortedBy: APIParametersType.Sorting.stars,
                                                atPage: newPage())) { [weak self] (result: RepoSearchResult) in
