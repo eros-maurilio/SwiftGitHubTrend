@@ -10,3 +10,4 @@
 
 "query.item.letter" = "q";
 "query.item.sorting" = "sorting";
+"query.item.page" = "page";
