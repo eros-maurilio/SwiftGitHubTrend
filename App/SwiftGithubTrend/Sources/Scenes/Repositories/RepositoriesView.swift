@@ -35,7 +35,11 @@ private extension RepositoriesView {
 }
 
 extension RepositoriesView: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.numberOfRows() - 1 { // TODO: There's probably a better way to present it here.
+            viewModel.loadRepositories()
+        }
+    }
 }
 
 extension RepositoriesView: UITableViewDataSource {
