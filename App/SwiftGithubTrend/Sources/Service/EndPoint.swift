@@ -39,10 +39,11 @@ extension EndPoint {
     
     // MARK: - Main Static Methods
     
-    static func findRepositories(using query: String, sortedBy sorting: String) -> EndPoint {
+    static func findRepositories(using query: String, sortedBy sorting: String, atPage page: String) -> EndPoint {
         let queryItems = [
             URLQueryItem(name: Localizable.Query.Item.letter, value: query),
-            URLQueryItem(name: Localizable.Query.Item.sorting, value: sorting)
+            URLQueryItem(name: Localizable.Query.Item.sorting, value: sorting),
+            URLQueryItem(name: Localizable.Query.Item.page, value: page)
         ]
         
         return EndPoint(path: Localizable.Github.Path.search, queryItems: queryItems)

@@ -41,6 +41,8 @@ internal enum Localizable {
     internal enum Item {
       /// q
       internal static let letter = Localizable.tr("Localizable", "query.item.letter")
+      /// page
+      internal static let page = Localizable.tr("Localizable", "query.item.page")
       /// sorting
       internal static let sorting = Localizable.tr("Localizable", "query.item.sorting")
     }

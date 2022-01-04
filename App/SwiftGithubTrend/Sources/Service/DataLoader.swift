@@ -2,6 +2,8 @@ import Foundation
 
 final class DataLoader {
     
+    var isLoading: Bool = false
+    
     // MARK: - Private atribute
     
     private var sharedSession: URLSession { URLSession.shared }
@@ -9,6 +11,8 @@ final class DataLoader {
     // MARK: - API Resquest Method
     
     func request<T: Decodable>(_ endPoint: EndPoint, completion: @escaping (Result<T, NSError>) -> Void) {
+        
+        isLoading = true
         
         guard let url = endPoint.url else {
             return completion(.failure(NSError(domain: "", code: 000, userInfo: ["Message": "Invalid URL"])))
@@ -29,6 +33,9 @@ final class DataLoader {
             do {
                 let parsedData = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(parsedData))
+                
+                self.isLoading = false
+                
                 return
                 
             } catch DecodingError.keyNotFound(let key, let context) {

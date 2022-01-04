@@ -5,14 +5,16 @@ typealias RepoSearchResult = Result<SearchResponse, NSError>
 final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     
     private weak var delegate: LoadContentable?
-    private var repositories = SearchResponse(items: [])
+    private var repositories = [Item]()
+    private var currentPage: Int
     
     init(delegate: LoadContentable) {
         self.delegate = delegate
+        self.currentPage = 0
     }
     
     func numberOfRows() -> Int {
-        repositories.items.count
+        repositories.count
     }
     
     func numberOfSections() -> Int {
@@ -20,14 +22,20 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     }
     
     func loadRepositories() {
+        
+        guard !DataLoader().isLoading else {
+            return
+        }
+        
         DataLoader().request(.findRepositories(using: APIParametersType.Language.swift,
-                                               sortedBy: APIParametersType.Sorting.stars)) { [weak self] (result: RepoSearchResult) in
+                                               sortedBy: APIParametersType.Sorting.stars,
+                                               atPage: newPage())) { [weak self] (result: RepoSearchResult) in
             
             guard let self = self else { return }
             
             switch result {
             case let .success(repoData):
-                self.repositories = repoData
+                self.repositories.append(contentsOf: repoData.items)
                 self.delegate?.didLoad()
                 
             case let .failure(error):
@@ -41,7 +49,7 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     }
     
     func dtoForRows(indexPath: IndexPath) -> CellDTO {
-        let item = repositories.items[indexPath.row]
+        let item = repositories[indexPath.row]
         let title = item.repoName
         let subtitle = item.repoDescription
         
@@ -51,5 +59,13 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     
     func transporter() {
         
+    }
+}
+
+extension RepositoriesViewModel {
+    private func newPage() -> String {
+        currentPage += 1
+        
+        return String(currentPage)
     }
 }
