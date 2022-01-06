@@ -21,6 +21,8 @@ private extension RepositoriesView {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         viewModel.loadRepositories()
+        tableView.estimatedRowHeight = 150
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     func registerCell() {
