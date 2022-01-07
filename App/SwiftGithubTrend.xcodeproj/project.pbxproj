@@ -262,6 +262,7 @@
 				14C9C74227754F7C0022CABB /* Sources */,
 				14C9C74327754F7C0022CABB /* Frameworks */,
 				14C9C74427754F7C0022CABB /* Resources */,
+				4F92EF6A17EA5F84016B2920 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -357,6 +358,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftGen/bin/swiftgen\" config run --config ../Config/swiftgen.yml\n";
+		};
+		4F92EF6A17EA5F84016B2920 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftGithubTrend/Pods-SwiftGithubTrend-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftGithubTrend/Pods-SwiftGithubTrend-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftGithubTrend/Pods-SwiftGithubTrend-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		5EEB31E16E02F2636B3C73A4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
