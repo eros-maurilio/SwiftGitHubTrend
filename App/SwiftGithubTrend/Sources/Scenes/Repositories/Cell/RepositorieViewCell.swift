@@ -2,6 +2,7 @@ import UIKit
 import Kingfisher
 
 struct CellDTO {
+    
     let repoName: String
     let repoDescription: String
     let authorName: String
@@ -9,10 +10,12 @@ struct CellDTO {
     let starsCount: Int
     let forksCount: Int
     
-    // Add other repo infos here
 }
 
 class RepositorieViewCell: UITableViewCell {
+    
+    // MARK: - Outlets
+    
     @IBOutlet private weak var repoName: UILabel!
     @IBOutlet private weak var repoDescription: UILabel!
     @IBOutlet private weak var authorName: UILabel!
@@ -23,6 +26,9 @@ class RepositorieViewCell: UITableViewCell {
 }
 
 extension RepositorieViewCell {
+    
+    // MARK: - Public Cell Method
+    
     func fill(dto: CellDTO) {
         authorName.text = dto.authorName
         authorPic.kf.setImage(with: URL(string: dto.authorPicUrl))
@@ -34,11 +40,12 @@ extension RepositorieViewCell {
         styleCell()
     }
     
+    // MARK: Private Styling Cell Method
+    
     private func styleCell() {
-        outline.layer.cornerRadius = 10
-        outline.layer.borderWidth = 1
-        outline.layer.borderColor = UIColor.secondarySystemFill.cgColor
-        
-        authorPic.layer.cornerRadius = CGFloat(authorPic.frame.height / 2)
+        outline.layer.cornerRadius = Layout.Cell.outlineCornerRadius
+        outline.layer.borderWidth = Layout.Cell.outlineBorderWidth
+        outline.layer.borderColor = Layout.Cell.outlineBorderColor
+        authorPic.layer.cornerRadius = Layout.Cell.cornerRadius(for: authorPic)
     }
 }
