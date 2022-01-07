@@ -54,11 +54,9 @@ extension WatchRepoPullsView: UITableViewDataSource {
         viewModel.numberOfRows()
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         repoCell(tableView, at: indexPath, forRepositorieCellDTO: viewModel.dtoForRows(indexPath: indexPath))
     }
-    
     
 }
 
@@ -68,11 +66,5 @@ extension WatchRepoPullsView: LoadViewDelegate {
             guard let self = self else { return }
             self.tableView.reloadData()
         }
-//        let repo = viewModel.repo.first
-//        let down = Down(markdownString: repo?.body ?? "")
-//        let style = "body { font: 120% sans-serif; color:\(traitCollection.userInterfaceStyle == .light ? "black" : "white"); }"
-//        let atributedString = try? down.toAttributedString(stylesheet: style)
-//        bodyLabel.attributedText = atributedString
-        
     }
 }

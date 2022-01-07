@@ -10,4 +10,7 @@ target 'SwiftGithubTrend' do
    pod 'SwiftLint'
    pod 'Kingfisher'
    pod 'Down'
+   
+   # ignore warnings from a specific pod
+   pod 'Down', :inhibit_warnings => true
 end
