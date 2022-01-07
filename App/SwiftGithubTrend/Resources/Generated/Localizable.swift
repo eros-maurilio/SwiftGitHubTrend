@@ -11,6 +11,15 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Localizable {
 
+  internal enum Api {
+    internal enum Response {
+      internal enum Description {
+        /// No description available
+        internal static let empty = Localizable.tr("Localizable", "Api.response.description.empty")
+      }
+    }
+  }
+
   internal enum Github {
     /// api.github.com
     internal static let host = Localizable.tr("Localizable", "Github.host")

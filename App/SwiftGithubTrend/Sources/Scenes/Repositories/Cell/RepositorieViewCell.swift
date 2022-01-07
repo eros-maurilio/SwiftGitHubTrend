@@ -36,7 +36,6 @@ extension RepositorieViewCell {
         repoDescription.text = dto.repoDescription
         stars.text = String(dto.starsCount)
         forks.text = String(dto.forksCount)
-        
         styleCell()
     }
     
