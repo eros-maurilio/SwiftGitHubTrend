@@ -39,6 +39,10 @@ extension RepositorieViewCell {
         styleCell()
     }
     
+    func indicator() {
+        
+    }
+    
     // MARK: Private Styling Cell Method
     
     private func styleCell() {

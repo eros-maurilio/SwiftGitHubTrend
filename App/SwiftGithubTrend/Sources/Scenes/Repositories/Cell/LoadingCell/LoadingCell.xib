@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="LoadingCell" customModule="SwiftGithubTrend" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="K8A-qH-BkB">
+                        <rect key="frame" x="146" y="17" width="28" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="4W7-1h-vjD"/>
+                            <constraint firstAttribute="height" constant="26" id="QRY-Tj-nto"/>
+                        </constraints>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="K8A-qH-BkB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Nkc-AG-Dj0"/>
+                    <constraint firstAttribute="bottom" secondItem="K8A-qH-BkB" secondAttribute="bottom" constant="17" id="Vo7-gb-bdQ"/>
+                    <constraint firstItem="K8A-qH-BkB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="dUc-vs-cSJ"/>
+                    <constraint firstItem="K8A-qH-BkB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="ffW-SN-LSB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="loadingIndicator" destination="K8A-qH-BkB" id="cQL-0J-gP0"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>
+        </tableViewCell>
+    </objects>
+</document>

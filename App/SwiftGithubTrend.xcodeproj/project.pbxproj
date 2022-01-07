@@ -19,6 +19,8 @@
 		146B3AFD277B790B00D0E97B /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B3AFC277B790B00D0E97B /* RepositoriesViewModel.swift */; };
 		14963C75277CBC9300F340FA /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14963C74277CBC9300F340FA /* UITableView+.swift */; };
 		14C6A81827886DCF000EDB54 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6A81727886DCF000EDB54 /* Layout.swift */; };
+		14C6A81B27887900000EDB54 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6A81927887900000EDB54 /* LoadingCell.swift */; };
+		14C6A81C27887900000EDB54 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C6A81A27887900000EDB54 /* LoadingCell.xib */; };
 		14C9C74A27754F7C0022CABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74927754F7C0022CABB /* AppDelegate.swift */; };
 		14C9C74C27754F7C0022CABB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74B27754F7C0022CABB /* SceneDelegate.swift */; };
 		14C9C74E27754F7C0022CABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74D27754F7C0022CABB /* ViewController.swift */; };
@@ -48,6 +50,8 @@
 		146B3AFC277B790B00D0E97B /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
 		14963C74277CBC9300F340FA /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		14C6A81727886DCF000EDB54 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		14C6A81927887900000EDB54 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		14C6A81A27887900000EDB54 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		14C9C74627754F7C0022CABB /* SwiftGithubTrend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGithubTrend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C9C74927754F7C0022CABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C9C74B27754F7C0022CABB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,8 +116,8 @@
 		146B3AF4277B43D900D0E97B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				146B3AF5277B441900D0E97B /* RepositorieViewCell.swift */,
-				146B3AF6277B441900D0E97B /* RepositorieViewCell.xib */,
+				14C6A81E278879A1000EDB54 /* RepositorieCell */,
+				14C6A81D27887995000EDB54 /* LoadingCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -125,6 +129,24 @@
 				146B3AFC277B790B00D0E97B /* RepositoriesViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14C6A81D27887995000EDB54 /* LoadingCell */ = {
+			isa = PBXGroup;
+			children = (
+				14C6A81927887900000EDB54 /* LoadingCell.swift */,
+				14C6A81A27887900000EDB54 /* LoadingCell.xib */,
+			);
+			path = LoadingCell;
+			sourceTree = "<group>";
+		};
+		14C6A81E278879A1000EDB54 /* RepositorieCell */ = {
+			isa = PBXGroup;
+			children = (
+				146B3AF5277B441900D0E97B /* RepositorieViewCell.swift */,
+				146B3AF6277B441900D0E97B /* RepositorieViewCell.xib */,
+			);
+			path = RepositorieCell;
 			sourceTree = "<group>";
 		};
 		14C9C73D27754F7B0022CABB = {
@@ -314,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C6A81C27887900000EDB54 /* LoadingCell.xib in Resources */,
 				14F19A2527765AE80002F2EF /* Localizable.strings in Resources */,
 				14F19A1A277658F20002F2EF /* LaunchScreen.storyboard in Resources */,
 				14F19A112776555C0002F2EF /* Strings.strings in Resources */,
@@ -422,6 +445,7 @@
 				14F19A0A277654030002F2EF /* Strings.swift in Sources */,
 				14008EE32777E57400522715 /* EndPoint.swift in Sources */,
 				14008EEA2778015700522715 /* SearchResponse.swift in Sources */,
+				14C6A81B27887900000EDB54 /* LoadingCell.swift in Sources */,
 				14F51480277A108800DE5476 /* WatchResponse.swift in Sources */,
 				14C9C74C27754F7C0022CABB /* SceneDelegate.swift in Sources */,
 				14008EE72777F5C200522715 /* DataLoader.swift in Sources */,
