@@ -46,14 +46,25 @@ extension RepositorieViewCell {
     func repoCell(dto: CellDTO) {
         commonStats(with: dto)
         repoDescription.text = dto.repoDescription
-        stars.text = String(dto.starsCount!)
-        forks.text = String(dto.forksCount!)
+        
+        if let starCount = dto.starsCount {
+            stars.text = String(starCount)
+        }
+        
+        if let forksCount = dto.forksCount {
+            forks.text = String(forksCount)
+        }
+        
         stylingRepositorieCellComponents()
     }
 
     func pullCell(dto: CellDTO) {
         commonStats(with: dto)
-        stars.text = String(dto.date!)
+        
+        if let date = dto.date {
+            stars.text = String(date)
+        }
+        
         markRender(dto.repoDescription)
         stylingPullsCellComponents()
     }
@@ -89,7 +100,6 @@ extension RepositorieViewCell {
         repoDescription.attributedText = atributedString
     }
 
-    
     private func commonStats(with dto: CellDTO) {
         authorName.text = dto.authorName
         authorPic.kf.setImage(with: URL(string: dto.authorPicUrl))
