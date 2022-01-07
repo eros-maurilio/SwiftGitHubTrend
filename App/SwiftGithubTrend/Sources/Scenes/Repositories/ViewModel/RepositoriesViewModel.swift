@@ -4,6 +4,8 @@ typealias RepoSearchResult = Result<SearchResponse, NSError>
 
 final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     
+    var isLoading: Bool = false
+    
     private weak var delegate: LoadContentable?
     private var repositories = [Item]()
     private var currentPage: Int
@@ -18,7 +20,7 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     }
     
     func numberOfSections() -> Int {
-        [repositories].count
+        2
     }
     
     func loadRepositories() {
@@ -26,6 +28,8 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
         guard !DataLoader().isLoading else {
             return
         }
+        
+        isLoading = true
         
         DataLoader().request(.findRepositories(using: APIParametersType.Language.swift,
                                                sortedBy: APIParametersType.Sorting.stars,
@@ -37,8 +41,10 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
             case let .success(repoData):
                 self.repositories.append(contentsOf: repoData.items)
                 self.delegate?.didLoad()
+                self.isLoading = false
                 
             case let .failure(error):
+                self.isLoading = false
                 debugPrint(error)
             }
         }
@@ -52,9 +58,16 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
         let item = repositories[indexPath.row]
         let title = item.repoName
         let subtitle = item.repoDescription
+        let author = item.owner
+        let stars = item.starsCount
+        let forks = item.forksCount
         
-        return CellDTO(repoName: title, repoDescription: subtitle ?? "")
-        
+        return CellDTO(repoName: title,
+                       repoDescription: subtitle ?? Localizable.Api.Response.Description.empty,
+                       authorName: author.login,
+                       authorPicUrl: author.avatarUrl,
+                       starsCount: stars,
+                       forksCount: forks)
     }
     
     func transporter() {

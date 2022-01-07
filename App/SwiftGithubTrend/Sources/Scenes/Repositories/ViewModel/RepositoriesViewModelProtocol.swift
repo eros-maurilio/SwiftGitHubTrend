@@ -1,6 +1,8 @@
 import Foundation
 
 protocol RepositoriesViewModelProtocol: AnyObject {
+    var isLoading: Bool { get }
+    
     func numberOfRows() -> Int
     func numberOfSections() -> Int
     func loadRepositories()

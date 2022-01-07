@@ -8,4 +8,5 @@ target 'SwiftGithubTrend' do
   # Pods for SwiftGithubTrend
    pod 'SwiftGen'
    pod 'SwiftLint'
+   pod 'Kingfisher'
 end
