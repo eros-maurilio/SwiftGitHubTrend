@@ -22,7 +22,7 @@
                         <rect key="frame" x="10" y="5" width="300" height="162"/>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="JYE-aD-Zgf" userLabel="Owner">
-                        <rect key="frame" x="26" y="21" width="75" height="30"/>
+                        <rect key="frame" x="20" y="21" width="75" height="30"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AxlPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="UjB-Uv-X98">
                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -152,7 +152,7 @@
                     <constraint firstItem="JYE-aD-Zgf" firstAttribute="top" secondItem="EQQ-wl-oIb" secondAttribute="top" constant="16" id="MlC-Sl-mFV"/>
                     <constraint firstItem="1Kh-XO-ilp" firstAttribute="top" secondItem="kcv-dh-OiP" secondAttribute="bottom" constant="12" id="RzT-oz-TIb"/>
                     <constraint firstItem="JbC-jQ-HwH" firstAttribute="leading" secondItem="EQQ-wl-oIb" secondAttribute="leading" constant="46" id="StN-93-11h"/>
-                    <constraint firstItem="JYE-aD-Zgf" firstAttribute="leading" secondItem="EQQ-wl-oIb" secondAttribute="leading" constant="16" id="VUh-ti-yBJ"/>
+                    <constraint firstItem="JYE-aD-Zgf" firstAttribute="leading" secondItem="EQQ-wl-oIb" secondAttribute="leading" constant="10" id="VUh-ti-yBJ"/>
                     <constraint firstItem="kcv-dh-OiP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="57" id="VoI-Sg-n7o"/>
                     <constraint firstAttribute="trailing" secondItem="EQQ-wl-oIb" secondAttribute="trailing" constant="10" id="WX5-wR-WPT"/>
                     <constraint firstItem="kcv-dh-OiP" firstAttribute="top" secondItem="JYE-aD-Zgf" secondAttribute="bottom" constant="12" id="Zb0-fq-XmU"/>
