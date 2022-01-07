@@ -1,10 +1,11 @@
 import Foundation
 
 protocol WatchRepoPullsViewModelProtocol: AnyObject {
-    var repo: [WatchResponse] { get }
-    
-    func setup(_ repo: (author: String, repo: String))
+    func numberOfRows() -> Int
+    func numberOfSections() -> Int
     func loadRepo(repo: (author: String, repo: String))
+    func setup(_ repo: (author: String, repo: String))
+    func dtoForRows(indexPath: IndexPath) -> CellDTO
 }
 
 protocol LoadViewDelegate: AnyObject {
