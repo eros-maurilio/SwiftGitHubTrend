@@ -17,6 +17,8 @@
 		146B3AF8277B441900D0E97B /* RepositorieViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146B3AF6277B441900D0E97B /* RepositorieViewCell.xib */; };
 		146B3AFB277B51D800D0E97B /* RepositoriesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B3AFA277B51D800D0E97B /* RepositoriesViewModelProtocol.swift */; };
 		146B3AFD277B790B00D0E97B /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B3AFC277B790B00D0E97B /* RepositoriesViewModel.swift */; };
+		14780CD22788EBCD00449B77 /* PullViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14780CD02788EBCD00449B77 /* PullViewCell.swift */; };
+		14780CD32788EBCD00449B77 /* PullViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14780CD12788EBCD00449B77 /* PullViewCell.xib */; };
 		14963C75277CBC9300F340FA /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14963C74277CBC9300F340FA /* UITableView+.swift */; };
 		14C6A81827886DCF000EDB54 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6A81727886DCF000EDB54 /* Layout.swift */; };
 		14C6A81B27887900000EDB54 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6A81927887900000EDB54 /* LoadingCell.swift */; };
@@ -52,6 +54,8 @@
 		146B3AF6277B441900D0E97B /* RepositorieViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositorieViewCell.xib; sourceTree = "<group>"; };
 		146B3AFA277B51D800D0E97B /* RepositoriesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelProtocol.swift; sourceTree = "<group>"; };
 		146B3AFC277B790B00D0E97B /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
+		14780CD02788EBCD00449B77 /* PullViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullViewCell.swift; sourceTree = "<group>"; };
+		14780CD12788EBCD00449B77 /* PullViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullViewCell.xib; sourceTree = "<group>"; };
 		14963C74277CBC9300F340FA /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		14C6A81727886DCF000EDB54 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		14C6A81927887900000EDB54 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
@@ -140,6 +144,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		14780CCF2788EB9900449B77 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				14780CD02788EBCD00449B77 /* PullViewCell.swift */,
+				14780CD12788EBCD00449B77 /* PullViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		14C6A81D27887995000EDB54 /* LoadingCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				14C6A82627889AFD000EDB54 /* ViewModel */,
+				14780CCF2788EB9900449B77 /* Cell */,
 				14C6A821278899FD000EDB54 /* WatchRepoPullsView.xib */,
 				14C6A820278899FD000EDB54 /* WatchRepoPullsView.swift */,
 			);
@@ -369,6 +383,7 @@
 				14F19A1A277658F20002F2EF /* LaunchScreen.storyboard in Resources */,
 				14F19A112776555C0002F2EF /* Strings.strings in Resources */,
 				146B3AF8277B441900D0E97B /* RepositorieViewCell.xib in Resources */,
+				14780CD32788EBCD00449B77 /* PullViewCell.xib in Resources */,
 				14C9C75327754F7D0022CABB /* Assets.xcassets in Resources */,
 				146B3AF3277B433C00D0E97B /* RepositoriesView.xib in Resources */,
 				14C6A823278899FD000EDB54 /* WatchRepoPullsView.xib in Resources */,
@@ -481,6 +496,7 @@
 				14C6A82527889AEA000EDB54 /* WatchRepoPullsViewModel.swift in Sources */,
 				14C9C74C27754F7C0022CABB /* SceneDelegate.swift in Sources */,
 				14008EE72777F5C200522715 /* DataLoader.swift in Sources */,
+				14780CD22788EBCD00449B77 /* PullViewCell.swift in Sources */,
 				14FB03A42778C14500F1419E /* OwnerModel.swift in Sources */,
 				146B3AFB277B51D800D0E97B /* RepositoriesViewModelProtocol.swift in Sources */,
 			);

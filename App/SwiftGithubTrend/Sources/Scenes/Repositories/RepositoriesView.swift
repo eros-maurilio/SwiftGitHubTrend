@@ -46,7 +46,7 @@ private extension RepositoriesView {
     
     func repoCell(_ tableView: UITableView, at indexPath: IndexPath, forRepositorieCellDTO repositorieCellDTO: CellDTO) -> RepositorieViewCell {
         let cell = tableView.dequeCell(RepositorieViewCell.self, indexPath)
-        cell.fill(dto: repositorieCellDTO)
+        cell.repoCell(dto: repositorieCellDTO)
         return cell
     }
     
@@ -124,6 +124,7 @@ extension RepositoriesView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.showRepositorie(viewModel.transporter(indexPath: indexPath))
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

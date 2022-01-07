@@ -7,9 +7,19 @@ struct CellDTO {
     let repoDescription: String
     let authorName: String
     let authorPicUrl: String
-    let starsCount: Int
-    let forksCount: Int
+    let date: String?
+    let starsCount: Int?
+    let forksCount: Int?
     
+    init(repoName: String, repoDescription: String, authorName: String, authorPicUrl: String, date: String? = nil, starsCount: Int? = nil, forksCount: Int? = nil) {
+        self.repoName = repoName
+        self.repoDescription = repoDescription
+        self.authorName = authorName
+        self.authorPicUrl = authorPicUrl
+        self.date = date
+        self.starsCount = starsCount
+        self.forksCount = forksCount
+    }
 }
 
 class RepositorieViewCell: UITableViewCell {
@@ -21,26 +31,28 @@ class RepositorieViewCell: UITableViewCell {
     @IBOutlet private weak var authorName: UILabel!
     @IBOutlet private weak var stars: UILabel!
     @IBOutlet private weak var forks: UILabel!
+    @IBOutlet private weak var forkIcon: UIImageView!
     @IBOutlet private weak var outline: UIView!
     @IBOutlet private weak var authorPic: UIImageView!
+    @IBOutlet private weak var mainIcon: UIImageView!
+    @IBOutlet private weak var bottomIcon: UIImageView!
 }
 
 extension RepositorieViewCell {
     
     // MARK: - Public Cell Method
     
-    func fill(dto: CellDTO) {
-        authorName.text = dto.authorName
-        authorPic.kf.setImage(with: URL(string: dto.authorPicUrl))
-        repoName.text = dto.repoName
-        repoDescription.text = dto.repoDescription
-        stars.text = String(dto.starsCount)
-        forks.text = String(dto.forksCount)
-        styleCell()
+    func repoCell(dto: CellDTO) {
+        commonStats(with: dto)
+        stars.text = String(dto.starsCount!)
+        forks.text = String(dto.forksCount!)
+        stylingRepositorieCellComponents()
     }
-    
-    func indicator() {
-        
+
+    func pullCell(dto: CellDTO) {
+        commonStats(with: dto)
+        stars.text = String(dto.date!)
+        stylingPullsCellComponents()
     }
     
     // MARK: Private Styling Cell Method
@@ -50,5 +62,29 @@ extension RepositorieViewCell {
         outline.layer.borderWidth = Layout.Cell.outlineBorderWidth
         outline.layer.borderColor = Layout.Cell.outlineBorderColor
         authorPic.layer.cornerRadius = Layout.Cell.cornerRadius(for: authorPic)
+    }
+    
+    private func stylingRepositorieCellComponents() {
+        mainIcon.image = UIImage(systemName: "book.closed")
+        bottomIcon.image = UIImage(systemName: "star")
+        forkIcon.isHidden = false
+        forks.isHidden = false
+        
+    }
+    
+    private func stylingPullsCellComponents() {
+        mainIcon.image = UIImage(systemName: "arrow.triangle.pull")
+        bottomIcon.image = UIImage(systemName: "calendar")
+        forks.isHidden = true
+        forkIcon.isHidden = true
+    }
+
+    
+    private func commonStats(with dto: CellDTO) {
+        authorName.text = dto.authorName
+        authorPic.kf.setImage(with: URL(string: dto.authorPicUrl))
+        repoName.text = dto.repoName
+        repoDescription.text = dto.repoDescription
+        styleCell()
     }
 }

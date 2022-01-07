@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="165" id="KGk-i7-Jjw" customClass="RepositorieViewCell" customModule="SwiftGithubTrend" customModuleProvider="target">
+        <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="165" id="KGk-i7-Jjw" customClass="RepositorieViewCell" customModule="SwiftGithubTrend" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="172"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" userLabel="CellView">
@@ -166,7 +166,10 @@
             <connections>
                 <outlet property="authorName" destination="92k-Sp-udZ" id="A3W-P0-3qh"/>
                 <outlet property="authorPic" destination="UjB-Uv-X98" id="Zqj-nc-1MC"/>
+                <outlet property="bottomIcon" destination="ydM-ca-iIJ" id="xMk-i7-Z1C"/>
+                <outlet property="forkIcon" destination="grf-MV-xhr" id="acO-ku-lCL"/>
                 <outlet property="forks" destination="m0B-4G-r3w" id="ywi-cu-byM"/>
+                <outlet property="mainIcon" destination="BM1-ua-wsp" id="ebs-4G-aZC"/>
                 <outlet property="outline" destination="EQQ-wl-oIb" id="Rda-hQ-1yj"/>
                 <outlet property="repoDescription" destination="Nck-PN-K08" id="ouO-WO-xWN"/>
                 <outlet property="repoName" destination="W5e-Rh-eNF" id="K5y-mF-8tq"/>

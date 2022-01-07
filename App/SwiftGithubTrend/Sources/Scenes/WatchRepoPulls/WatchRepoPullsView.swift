@@ -2,7 +2,6 @@ import UIKit
 import Down
 
 class WatchRepoPullsView: UIViewController {
-    @IBOutlet private weak var bodyLabel: UILabel!
     
     private lazy var viewModel: WatchRepoPullsViewModelProtocol = WatchRepoPullsViewModel(delegate: self)
     
@@ -29,7 +28,7 @@ extension WatchRepoPullsView: LoadViewDelegate {
         let down = Down(markdownString: repo?.body ?? "")
         let style = "body { font: 120% sans-serif; color:\(traitCollection.userInterfaceStyle == .light ? "black" : "white"); }"
         let atributedString = try? down.toAttributedString(stylesheet: style)
-        bodyLabel.attributedText = atributedString
+//        bodyLabel.attributedText = atributedString
         
     }
 }
