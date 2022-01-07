@@ -138,6 +138,8 @@ extension RepositoriesView: LoadContentable {
     }
     
     func displayRepositorie(_ repo: (author: String, repo: String)) {
-        debugPrint(repo)
+        let viewController = WatchRepoPullsView()
+        viewController.setup(repo)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

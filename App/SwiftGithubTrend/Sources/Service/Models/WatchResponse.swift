@@ -1,7 +1,7 @@
 struct WatchResponse: Codable {
-    let title: String
+    let title: String?
     let head: Head
-    let body: String
+    let body: String?
 }
 
 struct Head: Codable {

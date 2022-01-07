@@ -21,6 +21,10 @@
 		14C6A81827886DCF000EDB54 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6A81727886DCF000EDB54 /* Layout.swift */; };
 		14C6A81B27887900000EDB54 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6A81927887900000EDB54 /* LoadingCell.swift */; };
 		14C6A81C27887900000EDB54 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C6A81A27887900000EDB54 /* LoadingCell.xib */; };
+		14C6A822278899FD000EDB54 /* WatchRepoPullsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6A820278899FD000EDB54 /* WatchRepoPullsView.swift */; };
+		14C6A823278899FD000EDB54 /* WatchRepoPullsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C6A821278899FD000EDB54 /* WatchRepoPullsView.xib */; };
+		14C6A82527889AEA000EDB54 /* WatchRepoPullsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6A82427889AEA000EDB54 /* WatchRepoPullsViewModel.swift */; };
+		14C6A82827889B0C000EDB54 /* WatchRepoPullsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6A82727889B0C000EDB54 /* WatchRepoPullsProtocol.swift */; };
 		14C9C74A27754F7C0022CABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74927754F7C0022CABB /* AppDelegate.swift */; };
 		14C9C74C27754F7C0022CABB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74B27754F7C0022CABB /* SceneDelegate.swift */; };
 		14C9C74E27754F7C0022CABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C74D27754F7C0022CABB /* ViewController.swift */; };
@@ -52,6 +56,10 @@
 		14C6A81727886DCF000EDB54 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		14C6A81927887900000EDB54 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		14C6A81A27887900000EDB54 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		14C6A820278899FD000EDB54 /* WatchRepoPullsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRepoPullsView.swift; sourceTree = "<group>"; };
+		14C6A821278899FD000EDB54 /* WatchRepoPullsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchRepoPullsView.xib; sourceTree = "<group>"; };
+		14C6A82427889AEA000EDB54 /* WatchRepoPullsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRepoPullsViewModel.swift; sourceTree = "<group>"; };
+		14C6A82727889B0C000EDB54 /* WatchRepoPullsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRepoPullsProtocol.swift; sourceTree = "<group>"; };
 		14C9C74627754F7C0022CABB /* SwiftGithubTrend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGithubTrend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C9C74927754F7C0022CABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C9C74B27754F7C0022CABB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +105,7 @@
 		146B3AEE277B40F700D0E97B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				14C6A81F278899D0000EDB54 /* WatchRepoPulls */,
 				146B3AEF277B428600D0E97B /* Repositories */,
 			);
 			path = Scenes;
@@ -147,6 +156,25 @@
 				146B3AF6277B441900D0E97B /* RepositorieViewCell.xib */,
 			);
 			path = RepositorieCell;
+			sourceTree = "<group>";
+		};
+		14C6A81F278899D0000EDB54 /* WatchRepoPulls */ = {
+			isa = PBXGroup;
+			children = (
+				14C6A82627889AFD000EDB54 /* ViewModel */,
+				14C6A821278899FD000EDB54 /* WatchRepoPullsView.xib */,
+				14C6A820278899FD000EDB54 /* WatchRepoPullsView.swift */,
+			);
+			path = WatchRepoPulls;
+			sourceTree = "<group>";
+		};
+		14C6A82627889AFD000EDB54 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				14C6A82727889B0C000EDB54 /* WatchRepoPullsProtocol.swift */,
+				14C6A82427889AEA000EDB54 /* WatchRepoPullsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		14C9C73D27754F7B0022CABB = {
@@ -343,6 +371,7 @@
 				146B3AF8277B441900D0E97B /* RepositorieViewCell.xib in Resources */,
 				14C9C75327754F7D0022CABB /* Assets.xcassets in Resources */,
 				146B3AF3277B433C00D0E97B /* RepositoriesView.xib in Resources */,
+				14C6A823278899FD000EDB54 /* WatchRepoPullsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +467,7 @@
 				14C9C74A27754F7C0022CABB /* AppDelegate.swift in Sources */,
 				14C6A81827886DCF000EDB54 /* Layout.swift in Sources */,
 				146B3AFD277B790B00D0E97B /* RepositoriesViewModel.swift in Sources */,
+				14C6A822278899FD000EDB54 /* WatchRepoPullsView.swift in Sources */,
 				14F19A0F2776548C0002F2EF /* Assets.swift in Sources */,
 				14F19A0C277654110002F2EF /* Localizable.swift in Sources */,
 				14F5147D277A0B8900DE5476 /* String+Extension.swift in Sources */,
@@ -445,8 +475,10 @@
 				14F19A0A277654030002F2EF /* Strings.swift in Sources */,
 				14008EE32777E57400522715 /* EndPoint.swift in Sources */,
 				14008EEA2778015700522715 /* SearchResponse.swift in Sources */,
+				14C6A82827889B0C000EDB54 /* WatchRepoPullsProtocol.swift in Sources */,
 				14C6A81B27887900000EDB54 /* LoadingCell.swift in Sources */,
 				14F51480277A108800DE5476 /* WatchResponse.swift in Sources */,
+				14C6A82527889AEA000EDB54 /* WatchRepoPullsViewModel.swift in Sources */,
 				14C9C74C27754F7C0022CABB /* SceneDelegate.swift in Sources */,
 				14008EE72777F5C200522715 /* DataLoader.swift in Sources */,
 				14FB03A42778C14500F1419E /* OwnerModel.swift in Sources */,
