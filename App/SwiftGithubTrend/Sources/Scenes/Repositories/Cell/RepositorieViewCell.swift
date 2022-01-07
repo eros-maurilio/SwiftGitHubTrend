@@ -3,6 +3,9 @@ import UIKit
 struct CellDTO {
     let repoName: String
     let repoDescription: String
+    let authorName: String
+    let starsCount: Int
+    let forksCount: Int
     
     // Add other repo infos here
 }
@@ -10,16 +13,22 @@ struct CellDTO {
 class RepositorieViewCell: UITableViewCell {
     @IBOutlet private weak var repoName: UILabel!
     @IBOutlet private weak var repoDescription: UILabel!
+    @IBOutlet private weak var authorName: UILabel!
+    @IBOutlet private weak var stars: UILabel!
+    @IBOutlet private weak var forks: UILabel!
     @IBOutlet private weak var outline: UIView!
     @IBOutlet private weak var authorPic: UIImageView!
 }
 
 extension RepositorieViewCell {
     func fill(dto: CellDTO) {
+        authorName.text = dto.authorName
         repoName.text = dto.repoName
         repoDescription.text = dto.repoDescription
+        stars.text = String(dto.starsCount)
+        forks.text = String(dto.forksCount)
+        
         styleCell()
-        //Add other repo infos gere
     }
     
     private func styleCell() {

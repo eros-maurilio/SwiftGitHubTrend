@@ -52,9 +52,15 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
         let item = repositories[indexPath.row]
         let title = item.repoName
         let subtitle = item.repoDescription
+        let author = item.owner
+        let stars = item.starsCount
+        let forks = item.forksCount
         
-        return CellDTO(repoName: title, repoDescription: subtitle ?? "")
-        
+        return CellDTO(repoName: title,
+                       repoDescription: subtitle ?? "",
+                       authorName: author.login,
+                       starsCount: stars,
+                       forksCount: forks)
     }
     
     func transporter() {

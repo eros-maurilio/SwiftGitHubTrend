@@ -164,10 +164,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="authorName" destination="92k-Sp-udZ" id="A3W-P0-3qh"/>
                 <outlet property="authorPic" destination="UjB-Uv-X98" id="Vv9-Ew-VUE"/>
+                <outlet property="forks" destination="m0B-4G-r3w" id="ywi-cu-byM"/>
                 <outlet property="outline" destination="EQQ-wl-oIb" id="Rda-hQ-1yj"/>
                 <outlet property="repoDescription" destination="Nck-PN-K08" id="ouO-WO-xWN"/>
                 <outlet property="repoName" destination="W5e-Rh-eNF" id="K5y-mF-8tq"/>
+                <outlet property="stars" destination="j13-ln-gkd" id="m4d-Ew-vgA"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="190.84821428571428"/>
         </tableViewCell>
