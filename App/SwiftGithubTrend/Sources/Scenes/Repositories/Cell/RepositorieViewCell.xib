@@ -165,7 +165,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="authorName" destination="92k-Sp-udZ" id="A3W-P0-3qh"/>
-                <outlet property="authorPic" destination="UjB-Uv-X98" id="Vv9-Ew-VUE"/>
+                <outlet property="authorPic" destination="UjB-Uv-X98" id="Zqj-nc-1MC"/>
                 <outlet property="forks" destination="m0B-4G-r3w" id="ywi-cu-byM"/>
                 <outlet property="outline" destination="EQQ-wl-oIb" id="Rda-hQ-1yj"/>
                 <outlet property="repoDescription" destination="Nck-PN-K08" id="ouO-WO-xWN"/>

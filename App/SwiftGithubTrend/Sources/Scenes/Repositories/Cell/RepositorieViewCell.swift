@@ -1,9 +1,11 @@
 import UIKit
+import Kingfisher
 
 struct CellDTO {
     let repoName: String
     let repoDescription: String
     let authorName: String
+    let authorPicUrl: String
     let starsCount: Int
     let forksCount: Int
     
@@ -23,6 +25,7 @@ class RepositorieViewCell: UITableViewCell {
 extension RepositorieViewCell {
     func fill(dto: CellDTO) {
         authorName.text = dto.authorName
+        authorPic.kf.setImage(with: URL(string: dto.authorPicUrl))
         repoName.text = dto.repoName
         repoDescription.text = dto.repoDescription
         stars.text = String(dto.starsCount)

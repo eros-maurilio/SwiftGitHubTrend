@@ -59,6 +59,7 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
         return CellDTO(repoName: title,
                        repoDescription: subtitle ?? "",
                        authorName: author.login,
+                       authorPicUrl: author.avatarUrl,
                        starsCount: stars,
                        forksCount: forks)
     }
