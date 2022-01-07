@@ -30,6 +30,7 @@ private extension WatchRepoPullsView {
     func repoCell(_ tableView: UITableView, at indexPath: IndexPath, forRepositorieCellDTO repositorieCellDTO: CellDTO) -> RepositorieViewCell {
         let cell = tableView.dequeCell(RepositorieViewCell.self, indexPath)
         cell.pullCell(dto: repositorieCellDTO)
+        cell.selectionStyle = .none
         return cell
     }
     

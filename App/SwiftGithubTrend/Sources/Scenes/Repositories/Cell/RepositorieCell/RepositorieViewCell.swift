@@ -1,4 +1,5 @@
 import UIKit
+import Down
 import Kingfisher
 
 struct CellDTO {
@@ -44,6 +45,7 @@ extension RepositorieViewCell {
     
     func repoCell(dto: CellDTO) {
         commonStats(with: dto)
+        repoDescription.text = dto.repoDescription
         stars.text = String(dto.starsCount!)
         forks.text = String(dto.forksCount!)
         stylingRepositorieCellComponents()
@@ -52,6 +54,7 @@ extension RepositorieViewCell {
     func pullCell(dto: CellDTO) {
         commonStats(with: dto)
         stars.text = String(dto.date!)
+        markRender(dto.repoDescription)
         stylingPullsCellComponents()
     }
     
@@ -69,14 +72,21 @@ extension RepositorieViewCell {
         bottomIcon.image = UIImage(systemName: "star")
         forkIcon.isHidden = false
         forks.isHidden = false
-        
     }
     
     private func stylingPullsCellComponents() {
         mainIcon.image = UIImage(systemName: "arrow.triangle.pull")
         bottomIcon.image = UIImage(systemName: "calendar")
+        
         forks.isHidden = true
         forkIcon.isHidden = true
+    }
+    
+    private func markRender(_ body: String) {
+        let down = Down(markdownString: body)
+        let style = "body { font: 100% sans-serif; color: dimgray; }"
+        let atributedString = try? down.toAttributedString(stylesheet: style)
+        repoDescription.attributedText = atributedString
     }
 
     
@@ -84,7 +94,6 @@ extension RepositorieViewCell {
         authorName.text = dto.authorName
         authorPic.kf.setImage(with: URL(string: dto.authorPicUrl))
         repoName.text = dto.repoName
-        repoDescription.text = dto.repoDescription
         styleCell()
     }
 }
