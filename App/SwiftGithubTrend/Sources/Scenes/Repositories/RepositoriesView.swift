@@ -2,33 +2,41 @@ import UIKit
 
 class RepositoriesView: UIViewController {
     
-    enum TableSection: Int {
-        case reposList
-        case loader
-    }
+    // MARK: - Outlet
     
     @IBOutlet private weak var tableView: UITableView!
+    
+    // MARK: - Atributes
     
     private lazy var viewModel: RepositoriesViewModelProtocol = RepositoriesViewModel(delegate: self)
     private var rowLimit = 0
     
+    // MARK: - View's Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
-
     }
 }
+
+    // MARK: - Private Types
+
+private extension RepositoriesView {
+    enum TableSection: Int {
+        case reposList
+        case loader
+    }
+}
+
+    // MARK: - Private Methods
 
 private extension RepositoriesView {
     func setupView() {
         registerCell()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.tableFooterView = UIView()
+        tableViewSetup()
         viewModel.loadRepositories()
-        tableView.estimatedRowHeight = 160
-        tableView.rowHeight = UITableView.automaticDimension
+        rowSetup()
+
     }
     
     func registerCell() {
@@ -47,21 +55,20 @@ private extension RepositoriesView {
         cell.startLoadingAnimation()
         return cell
     }
-}
-
-extension RepositoriesView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let section = TableSection(rawValue: indexPath.section) else { return }
-        
-        if section == .loader && !viewModel.isLoading {
-            viewModel.loadRepositories()
-        }
-        
-        if indexPath.row == viewModel.numberOfRows() - 1 {
-            rowLimit = indexPath.row
-        }
+    
+    func tableViewSetup() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+    }
+    
+    func rowSetup() {
+        tableView.estimatedRowHeight = Layout.Cell.estimatedRowHeight
+        tableView.rowHeight = UITableView.automaticDimension
     }
 }
+
+    // MARK: - UITableViewDataSource
 
 extension RepositoriesView: UITableViewDataSource {
     
@@ -96,6 +103,27 @@ extension RepositoriesView: UITableViewDataSource {
         }
     }
 }
+
+    // MARK: - UITableviewDelegate
+
+extension RepositoriesView: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let section = TableSection(rawValue: indexPath.section) else { return }
+        
+        let penultRow = viewModel.numberOfRows() - 1
+        
+        if section == .loader && !viewModel.isLoading {
+            viewModel.loadRepositories()
+        }
+        
+        if indexPath.row == penultRow {
+            rowLimit = indexPath.row
+        }
+    }
+}
+
+    // MARK: - LoadContentable
 
 extension RepositoriesView: LoadContentable {
     func didLoad() {
