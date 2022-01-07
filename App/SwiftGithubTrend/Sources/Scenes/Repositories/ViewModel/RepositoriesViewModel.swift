@@ -4,7 +4,7 @@ typealias RepoSearchResult = Result<SearchResponse, NSError>
 
 final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     
-    var isLoading: Bool = false
+    var isLoading = false
     
     private weak var delegate: LoadContentable?
     private var repositories = [Item]()

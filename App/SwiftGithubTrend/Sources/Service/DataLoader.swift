@@ -2,7 +2,7 @@ import Foundation
 
 final class DataLoader {
     
-    var isLoading: Bool = false
+    var isLoading = false
     
     // MARK: - Private atribute
     

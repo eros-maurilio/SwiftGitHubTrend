@@ -1,5 +1,6 @@
 import UIKit
 
+
 typealias RepoWatchResult = Result<[WatchResponse], NSError>
 
 class ViewController: UIViewController {
@@ -12,6 +13,7 @@ class ViewController: UIViewController {
                 
         dataLoader.request(.watch(repo: "vsouza", from: "awesome-ios", listedBy: "pulls")) { [weak self] (result: RepoWatchResult) in
             guard let self = self else { return }
+            
             
             switch result {
                 

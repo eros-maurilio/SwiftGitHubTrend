@@ -7,7 +7,7 @@ protocol RepositoriesViewModelProtocol: AnyObject {
     func numberOfSections() -> Int
     func loadRepositories()
     func dtoForRows(indexPath: IndexPath) -> CellDTO
-    func transporter(indexPath: IndexPath) -> (author: String, repo: String) // TODO: Need to change in the future
+    func transporter(indexPath: IndexPath) -> (author: String, repo: String) // TODO: change model
     func showRepositorie(_ repo: (author: String, repo: String))
     
 }

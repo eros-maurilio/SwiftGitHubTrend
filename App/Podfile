@@ -9,4 +9,5 @@ target 'SwiftGithubTrend' do
    pod 'SwiftGen'
    pod 'SwiftLint'
    pod 'Kingfisher'
+   pod 'Down'
 end
