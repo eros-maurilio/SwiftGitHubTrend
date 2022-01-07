@@ -50,10 +50,6 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
         }
     }
     
-    func showRepositorie() {
-        
-    }
-    
     func dtoForRows(indexPath: IndexPath) -> CellDTO {
         let item = repositories[indexPath.row]
         let title = item.repoName
@@ -70,8 +66,15 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
                        forksCount: forks)
     }
     
-    func transporter() {
+    func transporter(indexPath: IndexPath) -> (author: String, repo: String) {
+        let item = repositories[indexPath.row]
+
+        return (author: item.owner.login, repo: item.repoName)
         
+    }
+    
+    func showRepositorie(_ repo: (author: String, repo: String)) {
+        delegate?.displayRepositorie(repo)
     }
 }
 

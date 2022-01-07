@@ -6,13 +6,13 @@ protocol RepositoriesViewModelProtocol: AnyObject {
     func numberOfRows() -> Int
     func numberOfSections() -> Int
     func loadRepositories()
-    func showRepositorie()
     func dtoForRows(indexPath: IndexPath) -> CellDTO
-    func transporter() // TODO: Need to change in the future
+    func transporter(indexPath: IndexPath) -> (author: String, repo: String) // TODO: Need to change in the future
+    func showRepositorie(_ repo: (author: String, repo: String))
     
 }
 
 protocol LoadContentable: AnyObject {
     func didLoad()
-    func displayRepositorie(_ repo: String)
+    func displayRepositorie(_ repo: (author: String, repo: String))
 }

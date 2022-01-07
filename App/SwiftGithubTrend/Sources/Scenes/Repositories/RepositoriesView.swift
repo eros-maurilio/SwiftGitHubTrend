@@ -121,6 +121,10 @@ extension RepositoriesView: UITableViewDelegate {
             rowLimit = indexPath.row
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.showRepositorie(viewModel.transporter(indexPath: indexPath))
+    }
 }
 
     // MARK: - LoadContentable
@@ -133,7 +137,7 @@ extension RepositoriesView: LoadContentable {
         }
     }
     
-    func displayRepositorie(_ repo: String) {
-        
+    func displayRepositorie(_ repo: (author: String, repo: String)) {
+        debugPrint(repo)
     }
 }
