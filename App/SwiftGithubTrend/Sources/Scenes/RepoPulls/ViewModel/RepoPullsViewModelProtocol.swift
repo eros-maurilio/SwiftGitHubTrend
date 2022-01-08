@@ -10,5 +10,5 @@ protocol RepoPullsViewModelProtocol: AnyObject {
 }
 
 protocol LoadViewDelegate: AnyObject {
-    func didLoadContent()
+    func didLoadContent(success: Bool, error: String?)
 }

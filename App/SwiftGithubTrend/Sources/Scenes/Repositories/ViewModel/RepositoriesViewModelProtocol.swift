@@ -7,12 +7,12 @@ protocol RepositoriesViewModelProtocol: AnyObject {
     func numberOfSections() -> Int
     func loadRepositories()
     func dtoForRows(indexPath: IndexPath) -> CellDTO
-    func transporter(indexPath: IndexPath) -> String
-    func showRepositorie(_ repoPath: String)
+    func transporter(indexPath: IndexPath) -> [String]
+    func showRepositorie(_ repoInfos: [String])
     
 }
 
 protocol LoadContentable: AnyObject {
     func didLoad()
-    func displayRepositorie(_ repoPath: String)
+    func displayRepositorie(_ repoInfos: [String])
 }

@@ -29,3 +29,6 @@
 "sf.symbols.star" = "star";
 "sf.symbols.date" = "calendar";
 
+// MARK: - Text
+
+"nav.title.popSwift" = "Swift's Most Popular Repos";

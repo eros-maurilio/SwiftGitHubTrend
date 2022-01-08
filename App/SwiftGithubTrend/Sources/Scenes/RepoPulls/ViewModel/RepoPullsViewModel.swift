@@ -3,21 +3,32 @@ import Foundation
 typealias RepoPullsResult = Result<[RepoPullsResponse], NSError>
 
 final class RepoPullsViewModel: RepoPullsViewModelProtocol {
+    // MARK: - Public Attributes
     
     var isLoading = false
+    
+    // MARK: - Private Attributes
+    
     private var repoResponse = [RepoPullsResponse]()
     private weak var delegate: LoadViewDelegate?
+    
+    // MARK: - Life Cycle
     
     init(delegate: LoadViewDelegate) {
         self.delegate = delegate
     }
+}
+
+    // MARK: - Public Methods
+
+extension RepoPullsViewModel {
     
     func numberOfRows() -> Int {
-        repoResponse.count
+        return repoResponse.count
     }
     
     func numberOfSections() -> Int {
-        2
+        return TableSection.sectionsCount()
     }
     
     func setup(_ repoPath: String) {
@@ -35,13 +46,19 @@ final class RepoPullsViewModel: RepoPullsViewModelProtocol {
             case let .success(repoData):
                 DispatchQueue.main.async {
                     self.repoResponse = repoData
-                    self.delegate?.didLoadContent()
+                    
+                    if !self.repoResponse.isEmpty {
+                        self.delegate?.didLoadContent(success: true, error: nil)
+                    } else {
+                        self.delegate?.didLoadContent(success: false, error: "There is no pull requests to show")
+                    }
+                    
                     self.isLoading = false
                 }
                 
             case let .failure(error):
                 self.isLoading = false
-                debugPrint(error)
+                self.delegate?.didLoadContent(success: false, error: error.userInfo.values.first as? String ?? "")
             }
         }
     }
@@ -53,7 +70,7 @@ final class RepoPullsViewModel: RepoPullsViewModelProtocol {
         let author = pullItem.head.repo.owner
         let date = pullItem.head.repo.createdAt
         
-        return CellDTO(title: title ?? "",
+        return CellDTO(title: title,
                        description: body ?? "",
                        authorName: author.login,
                        authorPicUrl: author.avatarUrl,

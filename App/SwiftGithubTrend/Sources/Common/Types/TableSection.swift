@@ -1,8 +1,9 @@
 enum TableSection: Int {
+    
     case currentList
     case loader
     
-    static func sectionCount() -> Int {
+    static func sectionsCount() -> Int {
         [TableSection.currentList, TableSection.loader].count
     }
 }

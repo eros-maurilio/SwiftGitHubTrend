@@ -33,7 +33,7 @@ private extension RepositoriesView {
     }
     
     func setupNavBar() {
-        navigationItem.title = "Swift's Most Popular Repos"
+        navigationItem.title = Strings.Nav.Title.popSwift
         navigationController?.navigationBar.barTintColor = Assets.gitBar.color
         navigationController?.navigationBar.tintColor = Assets.gitLabel.color
     }
@@ -119,9 +119,9 @@ extension RepositoriesView: LoadContentable {
         }
     }
     
-    func displayRepositorie(_ repoPath: String) {
+    func displayRepositorie(_ repoInfos: [String]) {
         let viewController = RepoPullsView()
-        viewController.setup(repoPath)
+        viewController.setup(repoInfos)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

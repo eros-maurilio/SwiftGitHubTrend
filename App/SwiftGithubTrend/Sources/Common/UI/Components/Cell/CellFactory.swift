@@ -2,12 +2,17 @@ import UIKit
 
 enum CellFactory {
     
+    // MARK: - Types
+    
     enum CellType {
         case repositories, pulls
     }
     
-    static func standard(_ tableView: UITableView, at indexPath: IndexPath, forACellDTO aCellDTO: CellDTO, cellType type: CellType) -> StandardViewCell {
+    // MARK: - Static Factory
+    
+    static func standard(_ tableView: UITableView, at indexPath: IndexPath, forACellDTO aCellDTO: CellDTO, cellType type: CellType, isSelectionEnabled: Bool = true) -> StandardViewCell {
         let cell = tableView.dequeCell(StandardViewCell.self, indexPath)
+        cell.selectionStyle = isSelectionEnabled ? .default : .none
         cell.selectCellType(of: type, with: aCellDTO)
         return cell
     }

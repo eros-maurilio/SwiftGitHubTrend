@@ -46,6 +46,13 @@ internal enum Strings {
     internal static let https = Strings.tr("Strings", "Web.https")
   }
 
+  internal enum Nav {
+    internal enum Title {
+      /// Swift's Most Popular Repos
+      internal static let popSwift = Strings.tr("Strings", "nav.title.popSwift")
+    }
+  }
+
   internal enum Query {
     internal enum Item {
       /// q

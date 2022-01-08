@@ -8,7 +8,14 @@ struct CellDTO {
     let starsCount: Int?
     let forksCount: Int?
     
-    init(title: String, description: String, authorName: String, authorPicUrl: String, date: String? = nil, starsCount: Int? = nil, forksCount: Int? = nil) {
+    init(title: String,
+         description: String,
+         authorName: String,
+         authorPicUrl: String,
+         date: String? = nil,
+         starsCount: Int? = nil,
+         forksCount: Int? = nil) {
+        
         self.title = title
         self.description = description
         self.authorName = authorName

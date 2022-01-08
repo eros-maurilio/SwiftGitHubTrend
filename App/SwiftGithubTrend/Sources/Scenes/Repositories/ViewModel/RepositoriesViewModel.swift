@@ -22,6 +22,8 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     }
 }
 
+    // MARK: - Public Methods
+
 extension RepositoriesViewModel {
     
     func numberOfRows() -> Int {
@@ -29,7 +31,7 @@ extension RepositoriesViewModel {
     }
     
     func numberOfSections() -> Int {
-        return TableSection.sectionCount()
+        return TableSection.sectionsCount()
     }
     
     func loadRepositories() {
@@ -62,31 +64,34 @@ extension RepositoriesViewModel {
     func dtoForRows(indexPath: IndexPath) -> CellDTO {
         let item = repositories[indexPath.row]
         let title = item.repoName
-        let subtitle = item.repoDescription
+        let bodyDescription = item.repoDescription
         let author = item.owner
         let stars = item.starsCount
         let forks = item.forksCount
         
         return CellDTO(title: title,
-                       description: subtitle ?? Strings.Api.Response.Description.empty,
+                       description: bodyDescription ?? Strings.Api.Response.Description.empty,
                        authorName: author.login,
                        authorPicUrl: author.avatarUrl,
                        starsCount: stars,
                        forksCount: forks)
     }
     
-    func transporter(indexPath: IndexPath) -> String {
+    func transporter(indexPath: IndexPath) -> [String] {
         let item = repositories[indexPath.row]
         
-        return item.repoPath
+        return [item.repoPath, item.repoName]
     }
     
-    func showRepositorie(_ repoPath: String) {
-        delegate?.displayRepositorie(repoPath)
+    func showRepositorie(_ repoInfos: [String]) {
+        delegate?.displayRepositorie(repoInfos)
     }
 }
 
+    // MARK: - Helper Method
+
 private extension RepositoriesViewModel {
+
     func newPage() -> String {
         currentPage += 1
         
