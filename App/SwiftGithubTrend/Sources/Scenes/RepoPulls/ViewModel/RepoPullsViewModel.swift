@@ -53,8 +53,8 @@ final class RepoPullsViewModel: RepoPullsViewModelProtocol {
         let author = pullItem.head.repo.owner
         let date = pullItem.head.repo.createdAt
         
-        return CellDTO(repoName: title ?? "",
-                       repoDescription: body ?? "",
+        return CellDTO(title: title ?? "",
+                       description: body ?? "",
                        authorName: author.login,
                        authorPicUrl: author.avatarUrl,
                        date: date)

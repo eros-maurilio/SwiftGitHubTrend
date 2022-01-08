@@ -22,6 +22,7 @@ class RepositoriesView: UIViewController {
 // MARK: - Private Methods
 
 private extension RepositoriesView {
+    
     func setupView() {
         CellFactory.registerCells(for: tableView)
         CellFactory.rowSetup(for: tableView)

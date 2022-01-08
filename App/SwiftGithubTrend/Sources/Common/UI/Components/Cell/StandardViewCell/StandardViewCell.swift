@@ -6,8 +6,8 @@ class StandardViewCell: UITableViewCell {
     
     // MARK: - Outlets
     
-    @IBOutlet private weak var repoName: UILabel!
-    @IBOutlet private weak var repoDescription: UILabel!
+    @IBOutlet private weak var title: UILabel!
+    @IBOutlet private weak var bodyDescription: UILabel!
     @IBOutlet private weak var authorName: UILabel!
     @IBOutlet private weak var stars: UILabel!
     @IBOutlet private weak var forks: UILabel!
@@ -39,7 +39,7 @@ extension StandardViewCell {
         
         func repoCell(dto: CellDTO) {
             commonStats(with: dto)
-            repoDescription.text = dto.repoDescription
+            bodyDescription.text = dto.description
             
             if let starCount = dto.starsCount {
                 stars.text = String(starCount)
@@ -59,7 +59,7 @@ extension StandardViewCell {
                 stars.text = String(date)
             }
             
-            markRender(dto.repoDescription)
+            markRender(dto.description)
             stylingPullsCellComponents()
         }
         
@@ -89,13 +89,13 @@ extension StandardViewCell {
             let down = Down(markdownString: body)
             let style = "body { font: 100% sans-serif; color: dimgray; }"
             let atributedString = try? down.toAttributedString(stylesheet: style)
-            repoDescription.attributedText = atributedString
+            bodyDescription.attributedText = atributedString
         }
         
         func commonStats(with dto: CellDTO) {
             authorName.text = dto.authorName
             authorPic.kf.setImage(with: URL(string: dto.authorPicUrl))
-            repoName.text = dto.repoName
+            title.text = dto.title
             styleCell()
         }
     }

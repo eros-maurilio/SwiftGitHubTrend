@@ -4,23 +4,32 @@ typealias RepoSearchResult = Result<SearchResponse, NSError>
 
 final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     
+    // MARK: - Public Atribute
+    
     var isLoading = false
+    
+    // MARK: - Private Atrivutes
     
     private weak var delegate: LoadContentable?
     private var repositories = [Item]()
     private var currentPage: Int
     
+    // MARK: - Life Cycle
+    
     init(delegate: LoadContentable) {
         self.delegate = delegate
         self.currentPage = 0
     }
+}
+
+extension RepositoriesViewModel {
     
     func numberOfRows() -> Int {
-        repositories.count
+        return repositories.count
     }
     
     func numberOfSections() -> Int {
-        2
+        return TableSection.sectionCount()
     }
     
     func loadRepositories() {
@@ -58,8 +67,8 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
         let stars = item.starsCount
         let forks = item.forksCount
         
-        return CellDTO(repoName: title,
-                       repoDescription: subtitle ?? Strings.Api.Response.Description.empty,
+        return CellDTO(title: title,
+                       description: subtitle ?? Strings.Api.Response.Description.empty,
                        authorName: author.login,
                        authorPicUrl: author.avatarUrl,
                        starsCount: stars,
@@ -68,9 +77,8 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     
     func transporter(indexPath: IndexPath) -> String {
         let item = repositories[indexPath.row]
-
-        return item.repoPath
         
+        return item.repoPath
     }
     
     func showRepositorie(_ repoPath: String) {
@@ -78,8 +86,8 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     }
 }
 
-extension RepositoriesViewModel {
-    private func newPage() -> String {
+private extension RepositoriesViewModel {
+    func newPage() -> String {
         currentPage += 1
         
         return String(currentPage)

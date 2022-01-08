@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -165,14 +164,14 @@
             <connections>
                 <outlet property="authorName" destination="92k-Sp-udZ" id="A3W-P0-3qh"/>
                 <outlet property="authorPic" destination="UjB-Uv-X98" id="Zqj-nc-1MC"/>
+                <outlet property="bodyDescription" destination="Nck-PN-K08" id="ouO-WO-xWN"/>
                 <outlet property="bottomIcon" destination="ydM-ca-iIJ" id="xMk-i7-Z1C"/>
                 <outlet property="forkIcon" destination="grf-MV-xhr" id="acO-ku-lCL"/>
                 <outlet property="forks" destination="m0B-4G-r3w" id="ywi-cu-byM"/>
                 <outlet property="mainIcon" destination="BM1-ua-wsp" id="ebs-4G-aZC"/>
                 <outlet property="outline" destination="EQQ-wl-oIb" id="Rda-hQ-1yj"/>
-                <outlet property="repoDescription" destination="Nck-PN-K08" id="ouO-WO-xWN"/>
-                <outlet property="repoName" destination="W5e-Rh-eNF" id="K5y-mF-8tq"/>
                 <outlet property="stars" destination="j13-ln-gkd" id="m4d-Ew-vgA"/>
+                <outlet property="title" destination="W5e-Rh-eNF" id="K5y-mF-8tq"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="190.84821428571428"/>
         </tableViewCell>
