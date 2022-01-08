@@ -8,7 +8,6 @@ enum Layout {
         static let outlineBorderColor: CGColor = UIColor.secondarySystemFill.cgColor
         static let estimatedRowHeight: CGFloat = 160
         
-        
         static func cornerRadius(for pic: UIImageView) -> CGFloat {
             CGFloat(pic.frame.height / 2) }
         

@@ -4,23 +4,34 @@ typealias RepoSearchResult = Result<SearchResponse, NSError>
 
 final class RepositoriesViewModel: RepositoriesViewModelProtocol {
     
-    var isLoading: Bool = false
+    // MARK: - Public Atribute
+    
+    var isLoading = false
+    
+    // MARK: - Private Atrivutes
     
     private weak var delegate: LoadContentable?
     private var repositories = [Item]()
     private var currentPage: Int
     
+    // MARK: - Life Cycle
+    
     init(delegate: LoadContentable) {
         self.delegate = delegate
         self.currentPage = 0
     }
+}
+
+    // MARK: - Public Methods
+
+extension RepositoriesViewModel {
     
     func numberOfRows() -> Int {
-        repositories.count
+        return repositories.count
     }
     
     func numberOfSections() -> Int {
-        2
+        return TableSection.sectionsCount()
     }
     
     func loadRepositories() {
@@ -50,33 +61,38 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
         }
     }
     
-    func showRepositorie() {
-        
-    }
-    
     func dtoForRows(indexPath: IndexPath) -> CellDTO {
         let item = repositories[indexPath.row]
         let title = item.repoName
-        let subtitle = item.repoDescription
+        let bodyDescription = item.repoDescription
         let author = item.owner
         let stars = item.starsCount
         let forks = item.forksCount
         
-        return CellDTO(repoName: title,
-                       repoDescription: subtitle ?? Localizable.Api.Response.Description.empty,
+        return CellDTO(title: title,
+                       description: bodyDescription ?? Strings.Api.Response.Description.empty,
                        authorName: author.login,
                        authorPicUrl: author.avatarUrl,
                        starsCount: stars,
                        forksCount: forks)
     }
     
-    func transporter() {
+    func transporter(indexPath: IndexPath) -> [String] {
+        let item = repositories[indexPath.row]
         
+        return [item.repoPath, item.repoName]
+    }
+    
+    func showRepositorie(_ repoInfos: [String]) {
+        delegate?.displayRepositorie(repoInfos)
     }
 }
 
-extension RepositoriesViewModel {
-    private func newPage() -> String {
+    // MARK: - Helper Method
+
+private extension RepositoriesViewModel {
+
+    func newPage() -> String {
         currentPage += 1
         
         return String(currentPage)

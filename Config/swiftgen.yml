@@ -7,13 +7,6 @@ strings:
         output: Strings.swift
         params:
           enumName: Strings
-  - inputs: Base.lproj
-    filter: .+\.strings$
-    outputs:
-      - templateName: structured-swift5
-        output: Localizable.swift
-        params:
-          enumName: Localizable
                     
 xcassets:
   inputs: Assets.xcassets

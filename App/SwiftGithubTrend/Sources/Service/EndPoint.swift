@@ -11,21 +11,21 @@ struct EndPoint {
     // MARK: - Computed Variable URL
     
     var url: URL? {
-
+        
         var components = URLComponents()
-        components.scheme = Localizable.Web.https
-        components.host = Localizable.Github.host
+        components.scheme = Strings.Web.https
+        components.host = Strings.Github.host
         components.path = path
-
+        
         guard let query = queryItems else {
             return components.url
         }
-
+        
         components.queryItems = query
-
+        
         return components.url
     }
-
+    
     // MARK: - Dependencies
     
     init(path: String, queryItems: [URLQueryItem]? = nil, repo: String? = nil) {
@@ -41,17 +41,17 @@ extension EndPoint {
     
     static func findRepositories(using query: String, sortedBy sorting: String, atPage page: String) -> EndPoint {
         let queryItems = [
-            URLQueryItem(name: Localizable.Query.Item.letter, value: query),
-            URLQueryItem(name: Localizable.Query.Item.sorting, value: sorting),
-            URLQueryItem(name: Localizable.Query.Item.page, value: page)
+            URLQueryItem(name: Strings.Query.Item.letter, value: query),
+            URLQueryItem(name: Strings.Query.Item.sorting, value: sorting),
+            URLQueryItem(name: Strings.Query.Item.page, value: page)
         ]
         
-        return EndPoint(path: Localizable.Github.Path.search, queryItems: queryItems)
+        return EndPoint(path: Strings.Github.Path.search, queryItems: queryItems)
         
     }
     
-    static func watch(repo repoName: String, from author: String, listedBy: String) -> EndPoint {
-        let repoPath = repoPathFactory(using: [repoName, author, listedBy])
+    static func watch(repo repoSelectedPath: String, listedBy: String) -> EndPoint {
+        let repoPath = repoPathFactory(using: repoSelectedPath, and: listedBy)
         
         return EndPoint(path: repoPath)
         
@@ -59,13 +59,14 @@ extension EndPoint {
     
     // MARK: - Helper Method
     
-    private static func repoPathFactory(using parameters: [String]) -> String {
-        var path = Localizable.Github.Path.repos
+    private static func repoPathFactory(using parameter: String, and listedBy: String) -> String {
+        var path = Strings.Github.Path.repos
+        let items = [parameter, listedBy]
         
-        for parameter in parameters {
-            path += parameter.insertSlash(in: parameter)
+        for item in items {
+            path += item.insertSlash(in: item)
         }
-        
+    
         return path
     }
 }

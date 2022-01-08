@@ -21,7 +21,6 @@ opt_in_rules:
     - discouraged_object_literal
     - discouraged_optional_boolean
     - file_header
-    - file_types_order
     - force_unwrapping
     - implicitly_unwrapped_optional
     - multiline_arguments

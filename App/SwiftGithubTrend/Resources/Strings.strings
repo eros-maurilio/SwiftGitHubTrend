@@ -1,1 +1,34 @@
-"test.test" = "test.square";
+
+// MARK: - Sec Protocol
+
+"Web.https" = "https";
+
+// MARK: - API Parameters
+
+"Github.host" = "api.github.com";
+"Github.path.search" = "/search/repositories";
+"Github.path.repos" = "/repos";
+"Github.parameters.language.swift" = "language:Swift";
+"Github.parameters.sorting.stars" = "stars";
+
+// MARK: - API's Query
+
+"query.item.letter" = "q";
+"query.item.sorting" = "sorting";
+"query.item.page" = "page";
+"query.item.listing" = "pulls";
+
+// MARK: - API's texts
+
+"Api.response.description.empty" = "No description available";
+
+// MARK: - SF Symbols
+
+"sf.symbols.repo" = "book.closed";
+"sf.symbols.pull" = "arrow.triangle.pull";
+"sf.symbols.star" = "star";
+"sf.symbols.date" = "calendar";
+
+// MARK: - Text
+
+"nav.title.popSwift" = "Swift's Most Popular Repos";

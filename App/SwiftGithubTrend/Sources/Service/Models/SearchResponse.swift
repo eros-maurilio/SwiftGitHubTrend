@@ -4,6 +4,7 @@ struct SearchResponse: Codable {
 
 struct Item: Codable {
     let repoName: String
+    let repoPath: String
     let repoDescription: String?
     let owner: Owner
     let starsCount: Int
@@ -13,6 +14,7 @@ struct Item: Codable {
 private extension Item {
     enum CodingKeys: String, CodingKey {
         case repoName = "name"
+        case repoPath = "full_name"
         case repoDescription = "description"
         case starsCount = "stargazers_count"
         case forksCount = "forks_count"

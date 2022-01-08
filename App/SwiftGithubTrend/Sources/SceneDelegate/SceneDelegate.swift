@@ -11,6 +11,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let viewController = RepositoriesView()
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: Assets.gitLabel.color]
+        
         window.rootViewController = navigationController
 
         self.window = window

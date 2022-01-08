@@ -19,41 +19,23 @@ class RepositoriesView: UIViewController {
     }
 }
 
-    // MARK: - Private Types
+// MARK: - Private Methods
 
 private extension RepositoriesView {
-    enum TableSection: Int {
-        case reposList
-        case loader
-    }
-}
-
-    // MARK: - Private Methods
-
-private extension RepositoriesView {
+    
     func setupView() {
-        registerCell()
+        CellFactory.registerCells(for: tableView)
+        CellFactory.rowSetup(for: tableView)
+        setupNavBar()
         tableViewSetup()
         viewModel.loadRepositories()
-        rowSetup()
-
+        
     }
     
-    func registerCell() {
-        tableView.register(RepositorieViewCell.self)
-        tableView.register(LoadingCell.self)
-    }
-    
-    func repoCell(_ tableView: UITableView, at indexPath: IndexPath, forRepositorieCellDTO repositorieCellDTO: CellDTO) -> RepositorieViewCell {
-        let cell = tableView.dequeCell(RepositorieViewCell.self, indexPath)
-        cell.fill(dto: repositorieCellDTO)
-        return cell
-    }
-    
-    func loadingCell(_ tableView: UITableView, at indexPath: IndexPath) -> LoadingCell {
-        let cell = tableView.dequeCell(LoadingCell.self, indexPath)
-        cell.startLoadingAnimation()
-        return cell
+    func setupNavBar() {
+        navigationItem.title = Strings.Nav.Title.popSwift
+        navigationController?.navigationBar.barTintColor = Assets.gitBar.color
+        navigationController?.navigationBar.tintColor = Assets.gitLabel.color
     }
     
     func tableViewSetup() {
@@ -61,19 +43,14 @@ private extension RepositoriesView {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
     }
-    
-    func rowSetup() {
-        tableView.estimatedRowHeight = Layout.Cell.estimatedRowHeight
-        tableView.rowHeight = UITableView.automaticDimension
-    }
 }
 
-    // MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource
 
 extension RepositoriesView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        viewModel.numberOfSections()
+        return viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,7 +58,7 @@ extension RepositoriesView: UITableViewDataSource {
         guard let listSection = TableSection(rawValue: section) else { return 0 }
         
         switch listSection {
-        case .reposList:
+        case .currentList:
             return viewModel.numberOfRows()
         case .loader:
             return viewModel.numberOfRows() >= rowLimit ? 1 : 0
@@ -92,19 +69,23 @@ extension RepositoriesView: UITableViewDataSource {
         guard let section = TableSection(rawValue: indexPath.section) else {
             return UITableViewCell()
         }
-        
+                
         switch section {
-        case .reposList:
-            return repoCell(tableView, at: indexPath, forRepositorieCellDTO: viewModel.dtoForRows(indexPath: indexPath))
-
+        case .currentList:
+            return CellFactory.standard(tableView,
+                                           at: indexPath,
+                                           forACellDTO: viewModel.dtoForRows(indexPath: indexPath),
+                                           cellType: .repositories)
+            
         case .loader:
-            return loadingCell(tableView, at: indexPath)
-
+            return CellFactory.loading(tableView,
+                                       at: indexPath)
+            
         }
     }
 }
 
-    // MARK: - UITableviewDelegate
+// MARK: - UITableviewDelegate
 
 extension RepositoriesView: UITableViewDelegate {
     
@@ -121,9 +102,14 @@ extension RepositoriesView: UITableViewDelegate {
             rowLimit = indexPath.row
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.showRepositorie(viewModel.transporter(indexPath: indexPath))
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
-    // MARK: - LoadContentable
+// MARK: - LoadContentable
 
 extension RepositoriesView: LoadContentable {
     func didLoad() {
@@ -133,7 +119,9 @@ extension RepositoriesView: LoadContentable {
         }
     }
     
-    func displayRepositorie(_ repo: String) {
-        
+    func displayRepositorie(_ repoInfos: [String]) {
+        let viewController = RepoPullsView()
+        viewController.setup(repoInfos)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
