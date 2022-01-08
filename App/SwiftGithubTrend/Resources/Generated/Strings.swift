@@ -50,17 +50,12 @@ internal enum Strings {
     internal enum Item {
       /// q
       internal static let letter = Strings.tr("Strings", "query.item.letter")
+      /// pulls
+      internal static let listing = Strings.tr("Strings", "query.item.listing")
       /// page
       internal static let page = Strings.tr("Strings", "query.item.page")
       /// sorting
       internal static let sorting = Strings.tr("Strings", "query.item.sorting")
-    }
-  }
-
-  internal enum Repo {
-    internal enum Item {
-      /// pulls
-      internal static let listing = Strings.tr("Strings", "repo.item.listing")
     }
   }
 
@@ -75,11 +70,6 @@ internal enum Strings {
       /// star
       internal static let star = Strings.tr("Strings", "sf.symbols.star")
     }
-  }
-
-  internal enum Test {
-    /// A random test
-    internal static let text = Strings.tr("Strings", "test.text")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
