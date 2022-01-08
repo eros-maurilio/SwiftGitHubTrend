@@ -108,6 +108,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		143141D52789CFD200893E91 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				143141D62789CFDF00893E91 /* Components */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		143141D62789CFDF00893E91 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				146B3AF4277B43D900D0E97B /* Cell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		146B3AEE277B40F700D0E97B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				146B3AF9277B4FF700D0E97B /* ViewModel */,
-				146B3AF4277B43D900D0E97B /* Cell */,
 				146B3AF0277B433C00D0E97B /* RepositoriesView.swift */,
 				146B3AF1277B433C00D0E97B /* RepositoriesView.xib */,
 			);
@@ -131,6 +146,7 @@
 		146B3AF4277B43D900D0E97B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				14780CD627891D8900449B77 /* CellFactory.swift */,
 				143141D22789CB7F00893E91 /* Model */,
 				14C6A81E278879A1000EDB54 /* StandardViewCell */,
 				14C6A81D27887995000EDB54 /* LoadingCell */,
@@ -276,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				14F5147E277A0D1900DE5476 /* Extesions */,
-				14780CD627891D8900449B77 /* CellFactory.swift */,
+				143141D52789CFD200893E91 /* UI */,
 			);
 			path = Common;
 			sourceTree = "<group>";
