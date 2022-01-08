@@ -1,10 +1,5 @@
 import UIKit
 
-enum TableSection: Int {
-    case reposList
-    case loader
-}
-
 class RepositoriesView: UIViewController {
     
     // MARK: - Outlet
@@ -30,9 +25,16 @@ private extension RepositoriesView {
     func setupView() {
         CellFactory.registerCells(for: tableView)
         CellFactory.rowSetup(for: tableView)
+        setupNavBar()
         tableViewSetup()
         viewModel.loadRepositories()
         
+    }
+    
+    func setupNavBar() {
+        navigationItem.title = "Swift's Most Popular Repos"
+        navigationController?.navigationBar.barTintColor = Assets.gitBar.color
+        navigationController?.navigationBar.tintColor = Assets.gitLabel.color
     }
     
     func tableViewSetup() {
@@ -47,7 +49,7 @@ private extension RepositoriesView {
 extension RepositoriesView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        viewModel.numberOfSections()
+        return viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +57,7 @@ extension RepositoriesView: UITableViewDataSource {
         guard let listSection = TableSection(rawValue: section) else { return 0 }
         
         switch listSection {
-        case .reposList:
+        case .currentList:
             return viewModel.numberOfRows()
         case .loader:
             return viewModel.numberOfRows() >= rowLimit ? 1 : 0
@@ -68,7 +70,7 @@ extension RepositoriesView: UITableViewDataSource {
         }
                 
         switch section {
-        case .reposList:
+        case .currentList:
             return CellFactory.standard(tableView,
                                            at: indexPath,
                                            forACellDTO: viewModel.dtoForRows(indexPath: indexPath),

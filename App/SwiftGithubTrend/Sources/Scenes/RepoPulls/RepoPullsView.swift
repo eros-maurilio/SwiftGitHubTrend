@@ -37,7 +37,7 @@ extension RepoPullsView: UITableViewDataSource {
         guard let listSection = TableSection(rawValue: section) else { return 0 }
         
         switch listSection {
-        case .reposList:
+        case .currentList:
             return viewModel.numberOfRows()
         case .loader:
             return viewModel.isLoading ? 1 : 0
@@ -51,7 +51,7 @@ extension RepoPullsView: UITableViewDataSource {
         }
         
         switch section {
-        case .reposList:
+        case .currentList:
             return CellFactory.standard(tableView,
                                            at: indexPath,
                                            forACellDTO: viewModel.dtoForRows(indexPath: indexPath),
