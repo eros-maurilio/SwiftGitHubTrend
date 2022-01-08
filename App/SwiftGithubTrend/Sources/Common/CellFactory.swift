@@ -17,4 +17,14 @@ enum CellFactory {
         cell.startLoadingAnimation()
         return cell
     }
+    
+    static func registerCells(for tableView: UITableView) {
+        tableView.register(StandardViewCell.self)
+        tableView.register(LoadingCell.self)
+    }
+    
+    static func rowSetup(for tableView: UITableView) {
+        tableView.estimatedRowHeight = Layout.Cell.estimatedRowHeight
+        tableView.rowHeight = UITableView.automaticDimension
+    }
 }

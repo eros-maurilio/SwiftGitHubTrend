@@ -24,37 +24,21 @@ class RepositoriesView: UIViewController {
     }
 }
 
-// MARK: - Private Types
-
-private extension RepositoriesView {
-    
-}
-
 // MARK: - Private Methods
 
 private extension RepositoriesView {
     func setupView() {
-        registerCell()
+        CellFactory.registerCells(for: tableView)
+        CellFactory.rowSetup(for: tableView)
         tableViewSetup()
         viewModel.loadRepositories()
-        rowSetup()
         
-    }
-    
-    func registerCell() {
-        tableView.register(StandardViewCell.self)
-        tableView.register(LoadingCell.self)
     }
     
     func tableViewSetup() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-    }
-    
-    func rowSetup() {
-        tableView.estimatedRowHeight = Layout.Cell.estimatedRowHeight
-        tableView.rowHeight = UITableView.automaticDimension
     }
 }
 

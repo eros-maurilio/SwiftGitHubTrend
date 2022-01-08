@@ -17,24 +17,14 @@ class RepoPullsView: UIViewController {
 
 private extension RepoPullsView {
     func setupView() {
-        registerCell()
+        CellFactory.registerCells(for: tableView)
+        CellFactory.rowSetup(for: tableView)
         tableViewSetup()
-        rowSetup()
-    }
-    
-    func registerCell() {
-        tableView.register(StandardViewCell.self)
-        tableView.register(LoadingCell.self)
     }
     
     func tableViewSetup() {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-    }
-    
-    func rowSetup() {
-        tableView.estimatedRowHeight = Layout.Cell.estimatedRowHeight
-        tableView.rowHeight = UITableView.automaticDimension
     }
 }
 
