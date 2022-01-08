@@ -1,4 +1,4 @@
-struct WatchResponse: Codable {
+struct RepoPullsResponse: Codable {
     let title: String?
     let head: Head
     let body: String?
@@ -6,7 +6,6 @@ struct WatchResponse: Codable {
 
 struct Head: Codable {
     let repo: Repo
-
 }
 
 struct Repo: Codable {

@@ -1,5 +1,10 @@
 import UIKit
 
+enum TableSection: Int {
+    case reposList
+    case loader
+}
+
 class RepositoriesView: UIViewController {
     
     // MARK: - Outlet
@@ -22,10 +27,7 @@ class RepositoriesView: UIViewController {
     // MARK: - Private Types
 
 private extension RepositoriesView {
-    enum TableSection: Int {
-        case reposList
-        case loader
-    }
+
 }
 
     // MARK: - Private Methods

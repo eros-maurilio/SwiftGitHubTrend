@@ -1,10 +1,11 @@
 import Foundation
 
-typealias RepoWatchResult = Result<[WatchResponse], NSError>
+typealias RepoPullsResult = Result<[RepoPullsResponse], NSError>
 
 final class RepoPullsViewModel: RepoPullsViewModelProtocol {
     
-    private var repoResponse = [WatchResponse]()
+    var isLoading = false
+    private var repoResponse = [RepoPullsResponse]()
     private weak var delegate: LoadViewDelegate?
     
     init(delegate: LoadViewDelegate) {
@@ -16,7 +17,7 @@ final class RepoPullsViewModel: RepoPullsViewModelProtocol {
     }
     
     func numberOfSections() -> Int {
-        [repoResponse].count
+        2
     }
     
     func setup(_ repoPath: String) {
@@ -24,7 +25,10 @@ final class RepoPullsViewModel: RepoPullsViewModelProtocol {
     }
     
     func loadRepo(repoPath: String) {
-        DataLoader().request(.watch(repo: repoPath, listedBy: Localizable.Repo.Item.listing)) { [weak self] (result: RepoWatchResult) in
+        
+        isLoading = true
+        
+        DataLoader().request(.watch(repo: repoPath, listedBy: Localizable.Repo.Item.listing)) { [weak self] (result: RepoPullsResult) in
             guard let self = self else { return }
             
             switch result {
@@ -32,9 +36,11 @@ final class RepoPullsViewModel: RepoPullsViewModelProtocol {
                 DispatchQueue.main.async {
                     self.repoResponse = repoData
                     self.delegate?.didLoadContent()
+                    self.isLoading = false
                 }
                 
             case let .failure(error):
+                self.isLoading = false
                 debugPrint(error)
             }
         }
