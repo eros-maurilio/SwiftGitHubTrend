@@ -28,7 +28,7 @@ final class RepoPullsViewModel: RepoPullsViewModelProtocol {
         
         isLoading = true
         
-        DataLoader().request(.watch(repo: repoPath, listedBy: Localizable.Repo.Item.listing)) { [weak self] (result: RepoPullsResult) in
+        DataLoader().request(.watch(repo: repoPath, listedBy: Strings.Repo.Item.listing)) { [weak self] (result: RepoPullsResult) in
             guard let self = self else { return }
             
             switch result {

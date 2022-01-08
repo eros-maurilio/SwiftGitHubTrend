@@ -11,9 +11,75 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
 
+  internal enum Api {
+    internal enum Response {
+      internal enum Description {
+        /// No description available
+        internal static let empty = Strings.tr("Strings", "Api.response.description.empty")
+      }
+    }
+  }
+
+  internal enum Github {
+    /// api.github.com
+    internal static let host = Strings.tr("Strings", "Github.host")
+    internal enum Parameters {
+      internal enum Language {
+        /// language:Swift
+        internal static let swift = Strings.tr("Strings", "Github.parameters.language.swift")
+      }
+      internal enum Sorting {
+        /// stars
+        internal static let stars = Strings.tr("Strings", "Github.parameters.sorting.stars")
+      }
+    }
+    internal enum Path {
+      /// /repos
+      internal static let repos = Strings.tr("Strings", "Github.path.repos")
+      /// /search/repositories
+      internal static let search = Strings.tr("Strings", "Github.path.search")
+    }
+  }
+
+  internal enum Web {
+    /// https
+    internal static let https = Strings.tr("Strings", "Web.https")
+  }
+
+  internal enum Query {
+    internal enum Item {
+      /// q
+      internal static let letter = Strings.tr("Strings", "query.item.letter")
+      /// page
+      internal static let page = Strings.tr("Strings", "query.item.page")
+      /// sorting
+      internal static let sorting = Strings.tr("Strings", "query.item.sorting")
+    }
+  }
+
+  internal enum Repo {
+    internal enum Item {
+      /// pulls
+      internal static let listing = Strings.tr("Strings", "repo.item.listing")
+    }
+  }
+
+  internal enum Sf {
+    internal enum Symbols {
+      /// calendar
+      internal static let date = Strings.tr("Strings", "sf.symbols.date")
+      /// arrow.triangle.pull
+      internal static let pull = Strings.tr("Strings", "sf.symbols.pull")
+      /// book.closed
+      internal static let repo = Strings.tr("Strings", "sf.symbols.repo")
+      /// star
+      internal static let star = Strings.tr("Strings", "sf.symbols.star")
+    }
+  }
+
   internal enum Test {
-    /// test.square
-    internal static let test = Strings.tr("Strings", "test.test")
+    /// A random test
+    internal static let text = Strings.tr("Strings", "test.text")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

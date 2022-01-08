@@ -59,7 +59,7 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
         let forks = item.forksCount
         
         return CellDTO(repoName: title,
-                       repoDescription: subtitle ?? Localizable.Api.Response.Description.empty,
+                       repoDescription: subtitle ?? Strings.Api.Response.Description.empty,
                        authorName: author.login,
                        authorPicUrl: author.avatarUrl,
                        starsCount: stars,

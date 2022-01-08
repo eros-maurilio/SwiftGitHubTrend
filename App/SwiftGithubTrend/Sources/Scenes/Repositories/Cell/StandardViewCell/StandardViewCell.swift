@@ -16,6 +16,7 @@ class StandardViewCell: UITableViewCell {
     @IBOutlet private weak var authorPic: UIImageView!
     @IBOutlet private weak var mainIcon: UIImageView!
     @IBOutlet private weak var bottomIcon: UIImageView!
+    
 }
 
 extension StandardViewCell {
@@ -70,15 +71,15 @@ extension StandardViewCell {
         }
         
         func stylingRepositorieCellComponents() {
-            mainIcon.image = UIImage(systemName: "book.closed")
-            bottomIcon.image = UIImage(systemName: "star")
+            mainIcon.image = UIImage(systemName: Strings.Sf.Symbols.repo)
+            bottomIcon.image = UIImage(systemName: Strings.Sf.Symbols.star)
             forkIcon.isHidden = false
             forks.isHidden = false
         }
         
         func stylingPullsCellComponents() {
-            mainIcon.image = UIImage(systemName: "arrow.triangle.pull")
-            bottomIcon.image = UIImage(systemName: "calendar")
+            mainIcon.image = UIImage(systemName: Strings.Sf.Symbols.pull)
+            bottomIcon.image = UIImage(systemName: Strings.Sf.Symbols.date)
             
             forks.isHidden = true
             forkIcon.isHidden = true

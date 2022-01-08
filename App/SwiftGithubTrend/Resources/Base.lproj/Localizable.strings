@@ -1,16 +1,1 @@
 "test.text" = "A random test";
-
-"Web.https" = "https";
-
-"Github.host" = "api.github.com";
-"Github.path.search" = "/search/repositories";
-"Github.path.repos" = "/repos";
-"Github.parameters.language.swift" = "language:Swift";
-"Github.parameters.sorting.stars" = "stars";
-
-"query.item.letter" = "q";
-"query.item.sorting" = "sorting";
-"query.item.page" = "page";
-"repo.item.listing" = "pulls";
-
-"Api.response.description.empty" = "No description available";

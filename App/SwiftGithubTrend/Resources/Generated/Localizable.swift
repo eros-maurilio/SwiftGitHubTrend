@@ -64,6 +64,19 @@ internal enum Localizable {
     }
   }
 
+  internal enum Sf {
+    internal enum Symbols {
+      /// calendar
+      internal static let date = Localizable.tr("Localizable", "sf.symbols.date")
+      /// arrow.triangle.pull
+      internal static let pull = Localizable.tr("Localizable", "sf.symbols.pull")
+      /// book.closed
+      internal static let repo = Localizable.tr("Localizable", "sf.symbols.repo")
+      /// star
+      internal static let star = Localizable.tr("Localizable", "sf.symbols.star")
+    }
+  }
+
   internal enum Test {
     /// A random test
     internal static let text = Localizable.tr("Localizable", "test.text")
