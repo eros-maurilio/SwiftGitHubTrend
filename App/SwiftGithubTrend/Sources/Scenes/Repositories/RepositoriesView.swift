@@ -24,13 +24,13 @@ class RepositoriesView: UIViewController {
     }
 }
 
-    // MARK: - Private Types
+// MARK: - Private Types
 
 private extension RepositoriesView {
-
+    
 }
 
-    // MARK: - Private Methods
+// MARK: - Private Methods
 
 private extension RepositoriesView {
     func setupView() {
@@ -38,24 +38,12 @@ private extension RepositoriesView {
         tableViewSetup()
         viewModel.loadRepositories()
         rowSetup()
-
+        
     }
     
     func registerCell() {
-        tableView.register(RepositorieViewCell.self)
+        tableView.register(StandardViewCell.self)
         tableView.register(LoadingCell.self)
-    }
-    
-    func repoCell(_ tableView: UITableView, at indexPath: IndexPath, forRepositorieCellDTO repositorieCellDTO: CellDTO) -> RepositorieViewCell {
-        let cell = tableView.dequeCell(RepositorieViewCell.self, indexPath)
-        cell.repoCell(dto: repositorieCellDTO)
-        return cell
-    }
-    
-    func loadingCell(_ tableView: UITableView, at indexPath: IndexPath) -> LoadingCell {
-        let cell = tableView.dequeCell(LoadingCell.self, indexPath)
-        cell.startLoadingAnimation()
-        return cell
     }
     
     func tableViewSetup() {
@@ -70,7 +58,7 @@ private extension RepositoriesView {
     }
 }
 
-    // MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource
 
 extension RepositoriesView: UITableViewDataSource {
     
@@ -94,19 +82,23 @@ extension RepositoriesView: UITableViewDataSource {
         guard let section = TableSection(rawValue: indexPath.section) else {
             return UITableViewCell()
         }
-        
+                
         switch section {
         case .reposList:
-            return repoCell(tableView, at: indexPath, forRepositorieCellDTO: viewModel.dtoForRows(indexPath: indexPath))
-
+            return CellFactory.standard(tableView,
+                                           at: indexPath,
+                                           forACellDTO: viewModel.dtoForRows(indexPath: indexPath),
+                                           cellType: .repositories)
+            
         case .loader:
-            return loadingCell(tableView, at: indexPath)
-
+            return CellFactory.loading(tableView,
+                                       at: indexPath)
+            
         }
     }
 }
 
-    // MARK: - UITableviewDelegate
+// MARK: - UITableviewDelegate
 
 extension RepositoriesView: UITableViewDelegate {
     
@@ -130,7 +122,7 @@ extension RepositoriesView: UITableViewDelegate {
     }
 }
 
-    // MARK: - LoadContentable
+// MARK: - LoadContentable
 
 extension RepositoriesView: LoadContentable {
     func didLoad() {

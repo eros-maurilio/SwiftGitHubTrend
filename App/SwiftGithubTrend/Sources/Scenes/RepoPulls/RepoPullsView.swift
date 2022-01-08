@@ -23,21 +23,8 @@ private extension RepoPullsView {
     }
     
     func registerCell() {
-        tableView.register(RepositorieViewCell.self)
+        tableView.register(StandardViewCell.self)
         tableView.register(LoadingCell.self)
-    }
-    
-    func repoCell(_ tableView: UITableView, at indexPath: IndexPath, forRepositorieCellDTO repositorieCellDTO: CellDTO) -> RepositorieViewCell {
-        let cell = tableView.dequeCell(RepositorieViewCell.self, indexPath)
-        cell.pullCell(dto: repositorieCellDTO)
-        cell.selectionStyle = .none
-        return cell
-    }
-    
-    func loadingCell(_ tableView: UITableView, at indexPath: IndexPath) -> LoadingCell {
-        let cell = tableView.dequeCell(LoadingCell.self, indexPath)
-        cell.startLoadingAnimation()
-        return cell
     }
     
     func tableViewSetup() {
@@ -75,9 +62,14 @@ extension RepoPullsView: UITableViewDataSource {
         
         switch section {
         case .reposList:
-            return repoCell(tableView, at: indexPath, forRepositorieCellDTO: viewModel.dtoForRows(indexPath: indexPath))
+            return CellFactory.standard(tableView,
+                                           at: indexPath,
+                                           forACellDTO: viewModel.dtoForRows(indexPath: indexPath),
+                                           cellType: .pulls)
         case .loader:
-            return loadingCell(tableView, at: indexPath)
+            return CellFactory.loading(tableView,
+                                       at: indexPath)
+            
         }
     }
     

@@ -66,7 +66,7 @@ extension EndPoint {
         for item in items {
             path += item.insertSlash(in: item)
         }
-        
+    
         return path
     }
 }

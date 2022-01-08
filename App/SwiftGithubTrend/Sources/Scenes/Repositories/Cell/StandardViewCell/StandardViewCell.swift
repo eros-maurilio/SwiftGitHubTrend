@@ -23,7 +23,9 @@ struct CellDTO {
     }
 }
 
-class RepositorieViewCell: UITableViewCell {
+
+
+class StandardViewCell: UITableViewCell {
     
     // MARK: - Outlets
     
@@ -39,9 +41,20 @@ class RepositorieViewCell: UITableViewCell {
     @IBOutlet private weak var bottomIcon: UIImageView!
 }
 
-extension RepositorieViewCell {
+extension StandardViewCell {
+    
+    
     
     // MARK: - Public Cell Method
+    
+    func selectCellType(of type: CellFactory.CellType, with dto: CellDTO) {
+        switch type {
+        case .repositories:
+            repoCell(dto: dto)
+        case .pulls:
+            pullCell(dto: dto)
+        }
+    }
     
     func repoCell(dto: CellDTO) {
         commonStats(with: dto)
