@@ -1,10 +1,10 @@
 import Foundation
 
-protocol WatchRepoPullsViewModelProtocol: AnyObject {
+protocol RepoPullsViewModelProtocol: AnyObject {
     func numberOfRows() -> Int
     func numberOfSections() -> Int
-    func loadRepo(repo: (author: String, repo: String))
-    func setup(_ repo: (author: String, repo: String))
+    func loadRepo(repoPath: String)
+    func setup(_ repoPath: String)
     func dtoForRows(indexPath: IndexPath) -> CellDTO
 }
 

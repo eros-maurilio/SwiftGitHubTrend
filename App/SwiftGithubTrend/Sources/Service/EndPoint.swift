@@ -11,21 +11,21 @@ struct EndPoint {
     // MARK: - Computed Variable URL
     
     var url: URL? {
-
+        
         var components = URLComponents()
         components.scheme = Localizable.Web.https
         components.host = Localizable.Github.host
         components.path = path
-
+        
         guard let query = queryItems else {
             return components.url
         }
-
+        
         components.queryItems = query
-
+        
         return components.url
     }
-
+    
     // MARK: - Dependencies
     
     init(path: String, queryItems: [URLQueryItem]? = nil, repo: String? = nil) {
@@ -50,8 +50,8 @@ extension EndPoint {
         
     }
     
-    static func watch(repo repoName: String, from author: String, listedBy: String) -> EndPoint {
-        let repoPath = repoPathFactory(using: [repoName, author, listedBy])
+    static func watch(repo repoSelectedPath: String, listedBy: String) -> EndPoint {
+        let repoPath = repoPathFactory(using: repoSelectedPath, and: listedBy)
         
         return EndPoint(path: repoPath)
         
@@ -59,11 +59,12 @@ extension EndPoint {
     
     // MARK: - Helper Method
     
-    private static func repoPathFactory(using parameters: [String]) -> String {
+    private static func repoPathFactory(using parameter: String, and listedBy: String) -> String {
         var path = Localizable.Github.Path.repos
+        let items = [parameter, listedBy]
         
-        for parameter in parameters {
-            path += parameter.insertSlash(in: parameter)
+        for item in items {
+            path += item.insertSlash(in: item)
         }
         
         return path

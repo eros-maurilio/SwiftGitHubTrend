@@ -1,22 +1,21 @@
 import UIKit
-import Down
 
-class WatchRepoPullsView: UIViewController {
+class RepoPullsView: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    private lazy var viewModel: WatchRepoPullsViewModelProtocol = WatchRepoPullsViewModel(delegate: self)
+    @IBOutlet private weak var tableView: UITableView!
+    private lazy var viewModel: RepoPullsViewModelProtocol = RepoPullsViewModel(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
-    func setup(_ repo: (author: String, repo: String)) {
-        viewModel.setup(repo)
+    func setup(_ repoPath: String) {
+        viewModel.setup(repoPath)
     }
 }
 
-private extension WatchRepoPullsView {
+private extension RepoPullsView {
     func setupView() {
         registerCell()
         tableViewSetup()
@@ -45,7 +44,7 @@ private extension WatchRepoPullsView {
     }
 }
 
-extension WatchRepoPullsView: UITableViewDataSource {
+extension RepoPullsView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         viewModel.numberOfSections()
     }
@@ -60,7 +59,7 @@ extension WatchRepoPullsView: UITableViewDataSource {
     
 }
 
-extension WatchRepoPullsView: LoadViewDelegate {
+extension RepoPullsView: LoadViewDelegate {
     func didLoadContent() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }

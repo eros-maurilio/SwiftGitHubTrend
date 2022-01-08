@@ -66,15 +66,15 @@ final class RepositoriesViewModel: RepositoriesViewModelProtocol {
                        forksCount: forks)
     }
     
-    func transporter(indexPath: IndexPath) -> (author: String, repo: String) {
+    func transporter(indexPath: IndexPath) -> String {
         let item = repositories[indexPath.row]
 
-        return (author: item.owner.login, repo: item.repoName)
+        return item.repoPath
         
     }
     
-    func showRepositorie(_ repo: (author: String, repo: String)) {
-        delegate?.displayRepositorie(repo)
+    func showRepositorie(_ repoPath: String) {
+        delegate?.displayRepositorie(repoPath)
     }
 }
 

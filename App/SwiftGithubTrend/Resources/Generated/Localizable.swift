@@ -57,6 +57,13 @@ internal enum Localizable {
     }
   }
 
+  internal enum Repo {
+    internal enum Item {
+      /// pulls
+      internal static let listing = Localizable.tr("Localizable", "repo.item.listing")
+    }
+  }
+
   internal enum Test {
     /// A random test
     internal static let text = Localizable.tr("Localizable", "test.text")
